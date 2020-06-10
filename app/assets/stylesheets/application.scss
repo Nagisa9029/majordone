@@ -2,3 +2,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/roots";
+@import "modules/user";
+
+header{
+  height: 50px;
+  background-color: red;
+}
+footer{
+  height: 100px;
+  background-color: black;
+}
