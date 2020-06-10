@@ -1,0 +1,2 @@
+class Sepage < ApplicationRecord
+end

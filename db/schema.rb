@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_053809) do
+ActiveRecord::Schema.define(version: 2020_06_10_140805) do
+
+  create_table "domaines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "kinds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "wine_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wine_id"], name: "index_kinds_on_wine_id"
+  end
+
+  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "wine_id", null: false
+    t.text "image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wine_id"], name: "index_product_images_on_wine_id"
+  end
+
+  create_table "sepages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
+    t.index ["name"], name: "index_sepages_on_name", unique: true
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -36,6 +67,39 @@ ActiveRecord::Schema.define(version: 2020_06_10_053809) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wine_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "type", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "producer"
+    t.string "type"
+    t.string "country"
+    t.string "domeine"
+    t.integer "price"
+    t.integer "attack"
+    t.integer "body"
+    t.integer "color"
+    t.integer "flavor"
+    t.integer "sweetness"
+    t.integer "bitterness"
+    t.integer "acidity"
+    t.integer "taste"
+    t.integer "tannin"
+    t.integer "astringency"
+    t.text "score_image"
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country"], name: "index_wines_on_country"
+    t.index ["name"], name: "index_wines_on_name"
+    t.index ["price"], name: "index_wines_on_price"
+    t.index ["type"], name: "index_wines_on_type"
   end
 
 end
