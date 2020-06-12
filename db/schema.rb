@@ -10,37 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_140805) do
+ActiveRecord::Schema.define(version: 2020_06_12_033230) do
 
   create_table "domaines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_domaines_on_name", unique: true
   end
 
-  create_table "kinds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "wine_id", null: false
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["wine_id"], name: "index_kinds_on_wine_id"
-  end
-
-  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "productimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "wine_id", null: false
     t.text "image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["wine_id"], name: "index_product_images_on_wine_id"
+    t.index ["wine_id"], name: "index_productimages_on_wine_id"
   end
 
   create_table "sepages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "kind"
     t.string "name", null: false
+    t.string "name_spell"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "type"
+    t.index ["kind"], name: "index_sepages_on_kind", unique: true
     t.index ["name"], name: "index_sepages_on_name", unique: true
+    t.index ["name_spell"], name: "index_sepages_on_name_spell", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,23 +65,37 @@ ActiveRecord::Schema.define(version: 2020_06_10_140805) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "wine_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "type", null: false
+  create_table "wine_sepages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "wine_id", null: false
+    t.bigint "sepage_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["sepage_id"], name: "index_wine_sepages_on_sepage_id"
+    t.index ["wine_id"], name: "index_wine_sepages_on_wine_id"
+  end
+
+  create_table "wine_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "group", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group"], name: "index_wine_types_on_group", unique: true
   end
 
   create_table "wines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.string "name_spell"
+    t.text "title"
+    t.text "comment"
     t.string "producer"
-    t.string "type"
-    t.string "country"
-    t.string "domeine"
+    t.bigint "wine_type_id", null: false
+    t.bigint "domaine_id", null: false
+    t.string "chator"
     t.integer "price"
     t.integer "attack"
     t.integer "body"
     t.integer "color"
     t.integer "flavor"
+    t.integer "fruit_flavor"
     t.integer "sweetness"
     t.integer "bitterness"
     t.integer "acidity"
@@ -96,10 +106,10 @@ ActiveRecord::Schema.define(version: 2020_06_10_140805) do
     t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["country"], name: "index_wines_on_country"
-    t.index ["name"], name: "index_wines_on_name"
-    t.index ["price"], name: "index_wines_on_price"
-    t.index ["type"], name: "index_wines_on_type"
+    t.index ["domaine_id"], name: "index_wines_on_domaine_id"
+    t.index ["name"], name: "index_wines_on_name", unique: true
+    t.index ["name_spell"], name: "index_wines_on_name_spell", unique: true
+    t.index ["wine_type_id"], name: "index_wines_on_wine_type_id"
   end
 
 end

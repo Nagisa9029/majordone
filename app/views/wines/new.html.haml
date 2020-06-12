@@ -1,0 +1,110 @@
+.Content
+  %h1 新規ワイン登録フォーム
+  .CreateForm
+    = form_with model: @wine , local: true do |f|
+      %table.CreateForm__Info
+        %tbody
+          %tr
+            %th
+              = f.label :name, "ワイン名", class: 'CreateForm__label'
+            %td
+              = f.text_field :name, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :name_spell, "スペル表記", class: 'CreateForm__label'
+            %td
+              = f.text_field :name_spell, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :title, "サブコメント", class: 'CreateForm__label'
+            %td
+              = f.text_field :title, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :comment, "詳細", class: 'CreateForm__label'
+            %td
+              = f.text_area :comment, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :producer, "生産者", class: 'CreateForm__label'
+            %td
+              = f.text_field :producer, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :domaine_id, "生産国", class: 'CreateForm__label'
+            %td
+              = f.collection_select :domaine_id, Domaine.all, :id, :name, include_blank: "選択して下さい"
+          %tr
+            %th
+              = f.label :chator, "ドメーヌ", class: 'CreateForm__label'
+            %td
+              = f.text_field :chator, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :price, "価格", class: 'CreateForm__label'
+            %td
+              = f.text_field :price, class: 'CreateForm__input', placeholder: ''
+      .CreateForm__field
+        = f.fields_for :productimages do |image_form|
+          .CreateForm__leftField
+            = image_form.label :image, "画像", class: 'CreateForm__label'
+          .CreateForm__rightField
+            = image_form.file_field :image, class: 'CreateForm__input'
+
+      .CreateForm__field
+        .CreateForm__leftField
+          = f.label :wine_type_id, "タイプ", class: 'CreateForm__label'
+        .CreateForm__rightField
+          = f.collection_select :wine_type_id, WineType.all, :id, :group, include_blank: "選択して下さい"
+      .CreateForm__field
+        .CreateForm__leftField
+          = f.label :sepage_name, "品種", class: 'CreateForm__label'
+        .CreateForm__rightField
+          = f.collection_check_boxes :sepage_ids, Sepage.all, :id, :name
+
+      %table.CreateForm__taste
+        %tbody
+          %tr
+            %th
+              = f.label :attack, "アタック", class: 'CreateForm__label'
+            %td
+              = f.number_field :attack, class: 'CreateForm__input', placeholder: ''
+            %th
+              = f.label :body, "ボディ", class: 'CreateForm__label'
+            %td
+              = f.number_field :body, class: 'CreateForm__input', placeholder: ''
+            %th
+              = f.label :color, "色調", class: 'CreateForm__label'
+            %td
+              = f.number_field :color, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :flavor, "フレーバー", class: 'CreateForm__label'
+            %td
+              = f.number_field :flavor, class: 'CreateForm__input', placeholder: ''
+            %th
+              = f.label :fruit_flavor, "果実味", class: 'CreateForm__label'
+            %td
+              = f.number_field :fruit_flavor, class: 'CreateForm__input', placeholder: ''
+            %th
+              = f.label :bitterness, "苦味", class: 'CreateForm__label'
+            %td
+              = f.number_field :bitterness, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :acidity, "酸味", class: 'CreateForm__label'
+            %td
+              = f.number_field :acidity, class: 'CreateForm__input', placeholder: ''
+            %th
+              = f.label :tannin, "タンニン", class: 'CreateForm__label'
+            %td
+              = f.number_field :tannin, class: 'CreateForm__input', placeholder: ''
+            %th
+              = f.label :astringency, "渋み", class: 'CreateForm__label'
+            %td
+              = f.number_field :astringency, class: 'CreateForm__input', placeholder: ''
+      .CreateForm__field
+        .CreateForm__leftField
+        .CreateForm__rightField
+          = f.submit '登録', class: 'Form__submitBtn'
+
