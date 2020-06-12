@@ -1,0 +1,163 @@
+.wrapper{
+  padding: 40px 40px;
+  .Product{
+    display: flex;
+    &__Left{
+      width: 430px;
+      &__Image{
+      }
+      &__Flever{
+      }
+      &__Body{
+      }
+      &__Taste{
+      }
+    }
+    &__Right{
+      width: calc(100vw - 430px);
+      &__Name{
+        p{
+
+        }
+        h1{
+          margin-top: 10px;
+          color: #272727;
+          font-size: 26px;
+          font-weight: bold;
+          line-height: calc(26/22);
+        }
+      }
+      &__Lead{
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: calc(28/16);
+      }
+      &__Date{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        &__Price{
+        }
+        &__Car--btn{
+        }
+      }
+      &__Text{
+      }
+      &--Line{
+        width: 100%;
+        height: 1px;
+        background: #e5e5e5;
+        margin: 30px 0;
+      }
+      &__Info{
+        .Product__table{
+          background: #f9f9f9;
+          width: 100%;
+          margin-top: 20px;
+          border-collapse: separate;
+          padding: 25px 25px;
+          tbody{
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+            tr{
+              display: table-row;
+              vertical-align: inherit;
+              border-color: inherit;
+              th{
+                text-align: left;
+                width: 120px;
+                padding-left: 20px;
+                box-sizing: border-box;
+                font-size: 14px;
+                vertical-align: top;
+              }
+              td{
+                position: relative;
+                box-sizing: border-box;
+                padding-left: 20px;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Content{
+  padding: 40px;
+  h1{
+    text-align: center;
+    font-size: 30px;
+  }
+  .CreateForm{
+    margin: 50px;
+    &__Info{
+      background: #f9f9f9;
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: separate;
+      padding: 25px 25px;
+      tbody{
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+        tr{
+          display: table-row;
+          vertical-align: inherit;
+          border-color: inherit;
+          th{
+            text-align: left;
+            width: 120px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+            vertical-align: top;
+          }
+          td{
+            position: relative;
+            box-sizing: border-box;
+            padding-left: 20px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &__taste{
+      background: #f9f9f9;
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: separate;
+      padding: 25px 25px;
+      tbody{
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+        tr{
+          display: table-row;
+          vertical-align: inherit;
+          border-color: inherit;
+          th{
+            text-align: left;
+            width: 120px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+            vertical-align: top;
+          }
+          td{
+            position: relative;
+            box-sizing: border-box;
+            padding-left: 20px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .Form__submitBtn{
+      text-align: center;
+    }
+  }
+}
