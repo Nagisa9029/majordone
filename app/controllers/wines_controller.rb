@@ -1,24 +1,33 @@
 class WinesController < ApplicationController
 
   def index
+    # 1000.times do |i|
+    #   @testimage = Testimage.new
+    #   g = Gruff::Area.new 500
+    #   g.title = "My Graph"
+    #   g.theme_greyscale
+    #   g.maximum_value = 10
 
-    # g = Gruff::Line.new 500
-    # g.title = "My Graph"
+    #   taste = []
+    #   9.times do
+    #     taste << rand(1..10)
+    #   end
 
-    # g.theme_37signals
-
-    # g.data('date1', [1, 3, 3, 6, 5, 4])
-    # g.data('date1', [1, 8, 7, 10, 5, 7])
-    # g.data('date1', [3, 2, 6, 2, 8, 9])
-    # g.data('date1', [3, 5, 6, 7, 3, 4])
-
-    # g.labels = {0 => '2010/01', 2 => '2010/03', 4 => '2010/05'}
-    # binding.pry
-    # g.write('./app/assets/images/graph.png')
-
-    # file = './app/assets/images/graph.png'
- 
-
+    #   g.data('data', taste)
+    #   g.labels = {0 => 'attack',
+    #               1 => 'body',
+    #               2 => 'color',
+    #               3 => 'flavor',
+    #               4 => 'fruit_flavor',
+    #               5 => 'bitterness',
+    #               6 => 'acidity',
+    #               7 => 'tannin',
+    #               8 => 'astringency'}
+    #   g.write("./app/assets/images/graph_#{i}.png")
+    #   image = File.open("./app/assets/images/graph_#{i}.png")
+    #   @testimage.image = image
+    #   @testimage.save
+    # end
   end
 
   def show
