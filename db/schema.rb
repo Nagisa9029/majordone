@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_12_033230) do
+ActiveRecord::Schema.define(version: 2020_06_12_150709) do
 
   create_table "domaines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 2020_06_12_033230) do
     t.index ["kind"], name: "index_sepages_on_kind", unique: true
     t.index ["name"], name: "index_sepages_on_name", unique: true
     t.index ["name_spell"], name: "index_sepages_on_name_spell", unique: true
+  end
+
+  create_table "testimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

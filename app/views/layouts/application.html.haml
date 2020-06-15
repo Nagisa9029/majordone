@@ -6,12 +6,35 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
+    -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      - if user_signed_in?
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'
-        = link_to edit_user_path(current_user.id), class: "SideHeader__list__iconList--iconBtn" do
-          = icon('fas', 'cog')
+      .HeaderList
+        = link_to root_path, class: 'HeaderList__Logo' do
+          = image_tag ('majordone_logo.svg'), class: 'top_logo'
+        - if user_signed_in?
+          .menu
+            %div MENU
+            %div.menu-trigger{ href: '#'}
+              %span
+              %span
+              %span
+    - if user_signed_in?
+      %nav#slide-menu
+        %div#user-info
+        %ul
+          %li My Menu(/user#edit)
+          %li Wine List(wines#MyList)
+          %li My Recipe(recipes#Mylist)
+          %li Battler(root#battler)
+          %li
+            = link_to "ユーザー編集", edit_user_path(current_user.id)
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+
+
+          
     = yield
+
     %footer
