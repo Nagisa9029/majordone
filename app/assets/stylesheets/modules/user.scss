@@ -1,35 +1,61 @@
-.AccountPage {
-  width: 980px;
-  margin: 60px auto;
-  padding: 60px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
+/* ---- particles.js container ---- */
+#particles-js{
+	position:absolute;
+	width: 100vw;
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+	background-color: #fff;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
 }
-.AccountPage__title {
-  width: 50%;
-  font-size: 14px;
-  font-weight: 200;
 
-  h2 {
-    margin-bottom: 10px;
-    letter-spacing: 3px;
-    font-size: 40px;
-    &:after {
-      content: "";
-      display: block;
-      width: 60px;
-      margin-top: 5px;
-      border-bottom: 1px solid #38aef0;
+.AccountField {
+  display: flex;
+  position: relative;
+  // width: 100vw;
+  // height: calc(100vh - 70px);
+  // margin-top: 70px;
+  // padding: 60px;
+  // background-color: #fff;
+  // border: 1px solid #ddd;
+  // border-radius: 5px;
+  // display: flex;
+  // justify-content: space-between;
+}
+.AccountPage{
+  width: 400px;
+  height: 400px;
+  top: 100px;
+  left: calc((100vw - 400px) / 2);
+  position: absolute;
+  border-radius: 20px;
+  background-color: red;
+  justify-content: space-between;
+  .AccountPage__title {
+    width: 50%;
+    font-size: 14px;
+    font-weight: 200;
+
+    h2 {
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      font-size: 40px;
+      &:after {
+        content: "";
+        display: block;
+        width: 60px;
+        margin-top: 5px;
+        border-bottom: 1px solid #38aef0;
+      }
     }
-  }
 
-  .Button {
-    margin-top: 40px;
-    color: #fff;
-    background-color: #ccc;
+    .Button {
+      margin-top: 40px;
+      color: #fff;
+      background-color: #ccc;
+    }
   }
 }
 

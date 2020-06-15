@@ -1,6 +1,6 @@
 //= require jquery
 //= require rails-ujs
-//= require_tree .
+//= require_tree ./modules
 //= require cocoon
 
 $(function(){
@@ -11,11 +11,9 @@ $(function(){
     if($(this).hasClass('active')){
       $(this).removeClass('active');
       $('#slide-menu').removeClass('open');
-      // $('nav').slideUp();
     } else {
       $(this).addClass('active');
       $('#slide-menu').addClass('open');
-      // $('nav').slideDown();
     }
   });
 });
