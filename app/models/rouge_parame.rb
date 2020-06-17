@@ -1,0 +1,2 @@
+class RougeParame < ApplicationRecord
+end

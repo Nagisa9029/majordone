@@ -1,0 +1,2 @@
+class SparklingParame < ApplicationRecord
+end

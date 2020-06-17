@@ -29,7 +29,7 @@
           %li My Recipe(recipes#Mylist)
           %li Battler(root#battler)
           %li
-            = link_to "ユーザー編集", edit_user_path(current_user.id)
+            = link_to "ユーザー編集", edit_user_path(current_user.id), class: 'no-underline'
           %li
             = link_to "ログアウト", destroy_user_session_path, method: :delete
 
@@ -38,3 +38,4 @@
     = yield
 
     %footer
+      &copy; 2020 T-Nakamura

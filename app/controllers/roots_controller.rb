@@ -6,5 +6,6 @@ class RootsController < ApplicationController
   end
 
   def butler
+    
   end
 end

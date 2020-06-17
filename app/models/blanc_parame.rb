@@ -1,0 +1,2 @@
+class BlancParame < ApplicationRecord
+end

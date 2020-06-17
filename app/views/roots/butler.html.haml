@@ -1,5 +1,35 @@
-%h1 バトラーメニュー
-%div.wrap
-  -300.times do
-    %div.c
-    
+.butler
+  -# %div.wrap
+  -#   -300.times do
+  -#     %div.c
+  .Chat
+    .Chat__SideMenu
+      .Chat__SideMenu__Butlerinfo
+        = image_tag ('neko.png'), class: 'nekoImg'
+      .Chat__SideMenu__ButlerText
+        = current_user.nickname
+        様、
+        %br
+        お呼びでしょうか？
+      %ul.ButlerMenu
+        = link_to "#", id: 'base', class: 'no-underline ButlerMenu--btn' do
+          %li 初期診断
+        = link_to "#", id: 'blanc', class: 'no-underline ButlerMenu--btn' do
+          %li 白ワイン診断
+        = link_to "#", id: 'rouge', class: 'no-underline ButlerMenu--btn' do
+          %li 赤ワイン診断
+        = link_to "#", id: 'sparkling', class: 'no-underline ButlerMenu--btn' do
+          %li スパークリングワイン診断
+        = link_to "#", id: 'talk', class: 'no-underline ButlerMenu--btn' do
+          %li Butlerと会話する
+    .Chat__MainField
+      -# .Chat__MainField--Butler#text_q
+        -# 診断を開始します
+      -# .Chat__MainField--Answer
+        -# =form_with  html: {class: "AnswerField"}, local: true do |f|
+        -#   = f.submit '・苦手です', name: "bt01", class: 'AnswerBtn'
+        -#   = f.submit '・あまり飲まない', name: "bt01", class: 'AnswerBtn'
+        -#   = f.submit '・普通かな', name: "bt01", class: 'AnswerBtn'
+        -#   = f.submit '・まあまあ好き', name: "bt01", class: 'AnswerBtn'
+        -#   = f.submit '・大好き', name: "bt01", class: 'AnswerBtn'
+
