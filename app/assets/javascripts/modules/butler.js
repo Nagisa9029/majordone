@@ -1,11 +1,12 @@
 $(function() {
   qa = new Array();
   count = 0; 
-  answer_params = [];
+  answer_param = [];
 
   function choiceQA(){
+    answer_param[0] = tabs[0].name;
     const index = tabs.index(this);
-    if (index == 0) {
+    if (index == 1) {
       qa[0] = ["Q1:イルカを漢字で書くとどれ？","海豚","海牛","河豚","水浮","水母"];
       qa[1] = ["Q2:クラゲを漢字で書くとどれ？","水浮","水母","水星","水浮","水母"];
       qa[2] = ["Q3:カタツムリを漢字で書くとどれ？","禍牛","鍋牛","蝸牛","水浮","水母"];
@@ -26,17 +27,19 @@ $(function() {
 
     function clickAnswer(e) {
       e.preventDefault();
-      const num = re_answer.index(this);
-      answer_params[count] = (num + 1)
-      // console.log(answer_params);
+
       $('.Chat__MainField--Answer')[count].innerHTML = `<div style="color: #fff;">
                                                           ${this.value}
                                                         </div>`;
       count += 1;
+      const num = re_answer.index(this);
+      answer_param[count] = (num + 1)
+
       if (count >= 10) {
-        let html_finite = buildHTML_finite(answer_params);
+        let html_finite = buildHTML_finite(answer_param);
         $('.Chat__MainField').append(html_finite);
         $('.Chat__MainField').animate({ scrollTop: $('.Chat__MainField')[0].scrollHeight});
+        console.log(answer_param);
         return
       }
       quiz();
@@ -70,14 +73,15 @@ $(function() {
                 </div>`
   return html2;
   }
-  function buildHTML_finite(answer_params){
+  function buildHTML_finite(answer_param){
     let html_finite = `<div class="Chat__MainField--Butler">
                         いろいろお話し頂き、ありがとうございます</br>
                         では、このままデータを更新します。よろしいでしょうか？
                       </div>
                       <div style="margin: 30px 30px; text-align: center;">
-                        <form class="" action="/butler" accept-charset="UTF-8" method="get">
-                          <input type="submit" answer=${answer_params} value="結果を更新します" class="Finite--btn">
+                        <form class="" enctype="multipart/form-data" action="/roots" accept-charset="UTF-8" method="post">
+                          <input type="hidden" name="taste_params" value="${answer_param}">
+                          <input type="submit" name="commit" value="結果を更新します" class="Finite--btn">
                         </form>
                       </div>`
     return html_finite;
@@ -101,5 +105,4 @@ $(function() {
 
   let tabs = $(".ButlerMenu--btn");
   tabs.click(choiceQA);
-
 });

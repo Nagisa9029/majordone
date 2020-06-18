@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :wines
   resources :recipes
+  resources :roots, only: [:create] do
+  end
 
   get '/butler' => 'roots#butler', as: 'butler_root'
   get '/homepage' => 'roots#homepage', as: 'homepage_root'

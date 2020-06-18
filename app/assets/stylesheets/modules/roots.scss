@@ -138,7 +138,9 @@ $base-hue: 0; // change for diff colors (180 is nice)
   text-align: center;
   cursor: pointer;
 }
-
+#hiddun{
+  display: none;
+}
 @keyframes rotate {
   100% {
     transform: rotateY(360deg) rotateX(360deg);

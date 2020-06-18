@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true, uniqueness: true
+
+  has_one :rougeParame
+  has_one :blancParame
+  has_one :sparklingParame
 end

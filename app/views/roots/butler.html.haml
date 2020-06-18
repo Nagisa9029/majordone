@@ -12,6 +12,9 @@
         %br
         お呼びでしょうか？
       %ul.ButlerMenu
+        = link_to "#", id: 'hiddun', class: 'no-underline ButlerMenu--btn', name: current_user.id do
+          %li 
+            = current_user.id
         = link_to "#", id: 'base', class: 'no-underline ButlerMenu--btn' do
           %li 初期診断
         = link_to "#", id: 'blanc', class: 'no-underline ButlerMenu--btn' do
