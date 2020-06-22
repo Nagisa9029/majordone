@@ -2,10 +2,10 @@
   text-decoration: none;
 }
 .MainBody{
+  padding-top: 70px;
   &__Top{
     background-color: yellowgreen;
     height: calc(100vh - 70px);
-    padding-top: 70px;
     .TopImage{
       height: 100%;
     }
@@ -82,6 +82,7 @@ $base-hue: 0; // change for diff colors (180 is nice)
       padding: 10px 20px;
     }
     ul.ButlerMenu{
+      
       li{
         text-decoration: none;
         padding: 10px 20px;

@@ -267,12 +267,12 @@ class BlancParame < ApplicationRecord
     search.each do |str|
       if taste_params[str] > 10
         taste_params[str] = 10
-      elsif taste_params[str] < 0
-        taste_params[str] = 0
+      elsif taste_params[str] < 1
+        taste_params[str] = 1
       end
     end
 
-    g = Gruff::Area.new 800
+    g = Gruff::Area.new 500
     g.title = "My Graph"
     g.theme_greyscale
     g.maximum_value = 10

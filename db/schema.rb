@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_151254) do
+ActiveRecord::Schema.define(version: 2020_06_21_152621) do
 
   create_table "blanc_parames", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -63,13 +63,13 @@ ActiveRecord::Schema.define(version: 2020_06_17_151254) do
   end
 
   create_table "sepages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "kind"
+    t.string "kind"
     t.string "name", null: false
     t.string "name_spell"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["kind"], name: "index_sepages_on_kind", unique: true
+    t.index ["kind"], name: "index_sepages_on_kind"
     t.index ["name"], name: "index_sepages_on_name", unique: true
     t.index ["name_spell"], name: "index_sepages_on_name_spell", unique: true
   end
@@ -90,13 +90,6 @@ ActiveRecord::Schema.define(version: 2020_06_17_151254) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_sparkling_parames_on_user_id"
-  end
-
-  create_table "testimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image", null: false
-    t.text "imagetext"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -166,9 +159,11 @@ ActiveRecord::Schema.define(version: 2020_06_17_151254) do
     t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "taste_comment"
+    t.boolean "wine_flg", default: false, null: false
     t.index ["domaine_id"], name: "index_wines_on_domaine_id"
-    t.index ["name"], name: "index_wines_on_name", unique: true
-    t.index ["name_spell"], name: "index_wines_on_name_spell", unique: true
+    t.index ["name"], name: "index_wines_on_name"
+    t.index ["name_spell"], name: "index_wines_on_name_spell"
     t.index ["wine_type_id"], name: "index_wines_on_wine_type_id"
   end
 

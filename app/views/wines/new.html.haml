@@ -26,6 +26,11 @@
               = f.text_area :comment, class: 'CreateForm__input', placeholder: ''
           %tr
             %th
+              = f.label :taste_comment, "味わい", class: 'CreateForm__label'
+            %td
+              = f.text_area :taste_comment, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
               = f.label :producer, "生産者", class: 'CreateForm__label'
             %td
               = f.text_field :producer, class: 'CreateForm__input', placeholder: ''
@@ -45,11 +50,15 @@
             %td
               = f.text_field :price, class: 'CreateForm__input', placeholder: ''
       .CreateForm__field
-        = f.fields_for :productimages do |image_form|
-          .CreateForm__leftField
-            = image_form.label :image, "画像", class: 'CreateForm__label'
-          .CreateForm__rightField
-            = image_form.file_field :image, class: 'CreateForm__input'
+        = f.fields_for :productimages do |op|
+          = render 'productimage_fields', f: op
+          .links
+            = link_to_add_association '＋別の商品を追加', f, :productimages
+        -# = f.fields_for :productimages do |image_form|
+        -#   .CreateForm__leftField
+        -#     = image_form.label :image, "画像", class: 'CreateForm__label'
+        -#   .CreateForm__rightField
+        -#     = image_form.file_field :image, class: 'CreateForm__input'
 
       .CreateForm__field
         .CreateForm__leftField
@@ -87,22 +96,31 @@
             %td
               = f.number_field :fruit_flavor, class: 'CreateForm__input', placeholder: ''
             %th
+              = f.label :sweetness, "甘味", class: 'CreateForm__label'
+            %td
+              = f.number_field :sweetness, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
               = f.label :bitterness, "苦味", class: 'CreateForm__label'
             %td
               = f.number_field :bitterness, class: 'CreateForm__input', placeholder: ''
-          %tr
             %th
               = f.label :acidity, "酸味", class: 'CreateForm__label'
             %td
               = f.number_field :acidity, class: 'CreateForm__input', placeholder: ''
             %th
-              = f.label :tannin, "タンニン", class: 'CreateForm__label'
+              = f.label :taste, "コク", class: 'CreateForm__label'
             %td
-              = f.number_field :tannin, class: 'CreateForm__input', placeholder: ''
-            %th
-              = f.label :astringency, "渋み", class: 'CreateForm__label'
-            %td
-              = f.number_field :astringency, class: 'CreateForm__input', placeholder: ''
+              = f.number_field :taste, class: 'CreateForm__input', placeholder: ''
+          -# %tr
+          -#   %th
+          -#     = f.label :tannin, "タンニン", class: 'CreateForm__label'
+          -#   %td
+          -#     = f.number_field :tannin, class: 'CreateForm__input', placeholder: ''
+          -#   %th
+          -#     = f.label :astringency, "渋み", class: 'CreateForm__label'
+          -#   %td
+          -#     = f.number_field :astringency, class: 'CreateForm__input', placeholder: ''
       .CreateForm__field
         .CreateForm__leftField
         .CreateForm__rightField
