@@ -83,8 +83,11 @@ class WinesController < ApplicationController
 
     image = File.open('./app/assets/images/graph.png')
     @wine.score_image = image
-    @wine.save
-    redirect_to 
+    if @wine.save
+      redirect_to new_wine_path
+    else
+      render :index
+    end
   end
 
   def edit
@@ -120,6 +123,7 @@ class WinesController < ApplicationController
                                   :astringency,
                                   :score_image,
                                   :score,
+                                  :taste_comment,
                                   sepage_ids: [],
                                   productimages_attributes:[
                                       :id,

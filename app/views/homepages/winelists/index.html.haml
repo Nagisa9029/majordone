@@ -1,0 +1,48 @@
+.MainBody
+  .MyWineField
+    .Butler_Info 
+      = "#{current_user.nickname}様にオススメのワインをリストアップいたしました。"
+    .MenuTabField
+      .MenuTab
+        %ul.Winelist
+          %li
+            = link_to "#", class: "wine_item active" do
+              スパークリングワイン
+          %li
+            = link_to "#", class: "wine_item" do
+              白ワイン
+          %li
+            = link_to "#", class: "wine_item" do
+              赤ワイン
+    .RecomendWineLists
+      %ul.WineContents
+        %li.WineContent.show
+          - @sparklingWines.each do |wine|
+            .WineContent__Box
+              = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
+              .WineContent__Box--domeine
+                = "#{wine.domaine.name} / #{wine.chator}"
+              .WineContent__Box--name
+                = wine.name
+              .WineContent__Box--title
+                = wine.title
+        %li.WineContent
+          -# - @blancWines.each do |wine|
+          -#   .WineContent__Box
+          -#     = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
+          -#     .WineContent__Box--domeine
+          -#       = "#{wine.domaine.name} / #{wine.chator}"
+          -#     .WineContent__Box--name
+          -#       = wine.name
+          -#     .WineContent__Box--title
+          -#       = wine.title
+        %li.WineContent
+          -# - @rougeWines.each do |wine|
+          -#   .WineContent__Box
+          -#     = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
+          -#     .WineContent__Box--domeine
+          -#       = "#{wine.domaine.name} / #{wine.chator}"
+          -#     .WineContent__Box--name
+          -#       = wine.name
+          -#     .WineContent__Box--title
+          -#       = wine.title
