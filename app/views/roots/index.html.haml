@@ -1,11 +1,50 @@
-.MainBody
-  .MainBody__Top
-    = image_tag ('top01.png'), class: 'TopImage'
+-# .MainBody
+-#   .MainBody__Top
+-#     = image_tag ('top01.png'), class: 'TopImage'
+ 
+-#   .MainBody__Sub
+-#     .SubInfo1
+-#       = image_tag ('top02.png'), class: 'SubInfo1--Image'
+-#     .SubInfo2
+-#       = image_tag ('top03.png'), class: 'SubInfo2--Image'
+-#     .SubInfo3
+-#       = image_tag ('top04.png'), class: 'SubInfo3--Image'
 
-  .MainBody__Sub
-    .SubInfo1
-      = image_tag ('top02.png'), class: 'SubInfo1--Image'
-    .SubInfo2
-      = image_tag ('top03.png'), class: 'SubInfo2--Image'
-    .SubInfo3
-      = image_tag ('top04.png'), class: 'SubInfo3--Image'
+
+.TopBody
+  .container
+    .slider
+      .slides
+        .slides__img.imageForce
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title Force slide
+            %h2.slide__caption__subtitle This is the fourth slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
+        .slides__img.imageFirst
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title First slide
+            %h2.slide__caption__subtitle This is the first slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
+        .slides__img.imageSecond
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title Second slide
+            %h2.slide__caption__subtitle This is the second slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
+        .slides__img.imageThird
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title Third slide
+            %h2.slide__caption__subtitle This is the third slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
+
+    %a.control#prev fas fa-chevron-left
+    %a.control#next fas fa-chevron-right
+
+    .dots
+      .dots__single
+      .dots__single
+      .dots__single
+      .dots__single
