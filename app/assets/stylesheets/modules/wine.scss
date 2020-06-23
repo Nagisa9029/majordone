@@ -1,3 +1,80 @@
+.PaddingBox{
+  height: 70px;
+}
+.PaddingBox2{
+  height: 50px;
+}
+.WineHeader{
+  height: 50px;
+  width: 100vw;
+  margin: 0 auto;
+  background-color: purple;
+  position: fixed;
+  .SearchField{
+    background-color: red;
+    height: 50px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.WineBody{
+  width: 80%;
+  // background-color: lightsteelblue;
+  margin: 0 auto;
+  // height: 1000px;
+  display: flex;
+  .WineSide{
+    background-color: lime;
+    width: 300px;
+    height: 100%;
+  }
+  .WineMainField{
+    padding: 30px;
+    .Products{
+      // background-color: magenta;
+      width: 100%;
+      height: 100%;
+
+      &__Box{
+        height: 200px;
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        &__left{
+          // background-color: maroon;
+          width: 150px;
+          padding-top: 20px;
+          &--image{
+            height: 150px;
+            border: 1px solid;
+            border-color: rgb(207, 207, 207);
+          }
+        }
+        &__center{
+          // background-color: mediumaquamarine;
+          padding: 20px;
+          width: 100%;
+          &--name{
+            border-bottom: 1px solid;
+          }
+          &--info{
+            font-size: 14px;
+          }
+        }
+        &__right{
+          // background-color: mediumblue;
+          padding: 20px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
 .wrapper{
   padding: 40px 40px;
   .Product{

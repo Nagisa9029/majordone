@@ -1,6 +1,7 @@
 class WinesController < ApplicationController
 
   def index
+    @wines = Wine.where(wine_type_id: 1)
   end
 
   def show
@@ -15,11 +16,11 @@ class WinesController < ApplicationController
   def create
     @wine = Wine.new(wine_params)
 
-
     g = Gruff::Area.new 500
     g.title = "My Graph"
     g.theme_greyscale
     g.maximum_value = 10
+    g.minimum_value = 0
     
     taste = []
     if @wine.attack != nil
