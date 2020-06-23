@@ -5,7 +5,10 @@
 @import "modules/user";
 @import "modules/wine";
 @import "modules/winelists";
-
+body{
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+}
 header{
   height: 70px;
   width: 100vw;
