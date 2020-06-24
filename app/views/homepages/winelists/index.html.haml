@@ -19,7 +19,8 @@
       %li.WineContent.show
         - @sparklingWines.each do |wine|
           .WineContent__Box
-            = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
+            = link_to wine_path(wine.id), class: 'no-underline' do
+              = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
             .WineContent__Box--domeine
               = "#{wine.domaine.name} / #{wine.chator}"
             .WineContent__Box--name

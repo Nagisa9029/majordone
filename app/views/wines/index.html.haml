@@ -34,8 +34,10 @@
             .Products__Box__center--info
               = "生産地：#{wine.domaine.name} / #{wine.chator}"
             .Products__Box__center--info
-              = "説明：#{wine.title}"
+              = "説　明：#{wine.title}"
           %hr
           .Products__Box__right
             = wine.price
         %hr
+      .p-top__paginate
+        = paginate @wines

@@ -170,7 +170,8 @@ $base-hue: 0; // change for diff colors (180 is nice)
     height: calc(100vh - 70px);
     z-index: 1;}
 
-.container {height: 100vh;
+.containe {height: 100vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,8 +184,8 @@ $base-hue: 0; // change for diff colors (180 is nice)
 }
 
 .slider {width: 100%; height: 100%; overflow: hidden;}
-.slides {width: calc(100% * 5); height: 100%; position: relative; left: -100%;}
-.slides__img {width: calc(100% / 5); height: 100%; float: left; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;}
+.slides {width: calc(100% * 4); height: 100%; position: relative; left: -100%;}
+.slides__img {width: calc(100% / 4); height: 100%; float: left; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;}
 .slides__img__filter {width: 100%; height: 100%; background-color: #000; position: absolute; top: 0; left: 0; z-index: 10; opacity: 0.3;}
 .imageFirst{background-image: url('top01.png');}
 .imageSecond{background-image: url('top02.png');}

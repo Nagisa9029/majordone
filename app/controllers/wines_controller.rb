@@ -1,7 +1,7 @@
 class WinesController < ApplicationController
 
   def index
-    @wines = Wine.where(wine_type_id: 1)
+    @wines = Wine.page(params[:page]).per(20)
   end
 
   def show
