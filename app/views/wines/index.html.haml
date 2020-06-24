@@ -1,12 +1,43 @@
-%h1 Wines#index
-%p Find me in app/views/wines/index.html.haml
--# particles.js container
-%div#particles-js
--# stats - count particles
--# %div.count-particles
--#   %span.js-count-particles --
--#   particles
-
--# %script(src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js")
-
--# %script(src="http://threejs.org/examples/js/libs/stats.min.js")
+.PaddingBox
+.WineHeader
+  .SearchField
+    %h1 Wines#index
+    %p Find me in app/views/wines/index.html.haml
+.PaddingBox2
+.WineBody
+  .WineSide
+    a
+    %br
+    a
+    %br
+    a
+    %br
+    a
+    %br
+  .WineMainField
+    .Products
+      - @wines.each do |wine|
+        .Products__Box
+          .Products__Box__left
+            = link_to wine_path(wine.id), class: 'no-underline' do
+              = image_tag wine.productimages[0].image_url, class: 'Products__Box__left--image'
+          .Products__Box__center
+            .Products__Box__center--name
+              = link_to wine_path(wine.id), class: 'no-underline' do
+                = wine.name
+            .Products__Box__center--info
+              = wine.name_spell
+            .Products__Box__center--info
+              = "生産者：#{wine.producer}"
+            .Products__Box__center--info
+              = "タイプ：#{wine.wine_type.group}"
+            .Products__Box__center--info
+              = "生産地：#{wine.domaine.name} / #{wine.chator}"
+            .Products__Box__center--info
+              = "説　明：#{wine.title}"
+          %hr
+          .Products__Box__right
+            = wine.price
+        %hr
+      .p-top__paginate
+        = paginate @wines

@@ -1,82 +1,230 @@
-.wrapper{
-  padding: 40px 40px;
+.p-top__paginate{
+  margin-left: 200px;
+}
+
+// #index
+.PaddingBox{
+  height: 70px;
+}
+.PaddingBox2{
+  height: 50px;
+}
+.WineHeader{
+  height: 50px;
+  width: 100vw;
+  margin: 0 auto;
+  background-color: purple;
+  position: fixed;
+  .SearchField{
+    background-color: red;
+    height: 50px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.WineBody{
+  width: 80%;
+  // background-color: lightsteelblue;
+  margin: 0 auto;
+  // height: 1000px;
+  display: flex;
+  .WineSide{
+    background-color: lime;
+    width: 300px;
+    height: 100%;
+  }
+  .WineMainField{
+    padding: 30px;
+    .Products{
+      // background-color: magenta;
+      width: 100%;
+      height: 100%;
+
+      &__Box{
+        height: 200px;
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        &__left{
+          // background-color: maroon;
+          width: 150px;
+          padding-top: 20px;
+          &--image{
+            height: 150px;
+            border: 1px solid;
+            border-color: rgb(207, 207, 207);
+          }
+        }
+        &__center{
+          // background-color: mediumaquamarine;
+          padding: 20px;
+          width: 100%;
+          &--name{
+            border-bottom: 1px solid;
+          }
+          &--info{
+            font-size: 14px;
+          }
+        }
+        &__right{
+          // background-color: mediumblue;
+          padding: 20px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+// #Show
+.WineItemInfomation{
+  // padding: 40px 100px;
+  width: 100vw;
+  height: 1000px;
+  // background-color: mediumseagreen;
   .Product{
     display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
     &__Left{
-      width: 430px;
-      &__Image{
+      background-color: mediumorchid;
+      width: 600px;
+      // height: 100%;
+      &__ImageBox{
+        background-color: rgb(6, 12, 9);
+        height: 400px;
+        // width: 500px;
+        &--image{
+          height: 300px;
+        //   border: 1px solid;
+        //   border-color: rgb(207, 207, 207);
+        }
       }
-      &__Flever{
+      &--flever{
       }
-      &__Body{
+      &--body{
+
       }
-      &__Taste{
+      &--taste{
+
       }
     }
     &__Right{
-      width: calc(100vw - 430px);
-      &__Name{
-        p{
+      width: 100%;
+      // height: 100%;
+      // background-color: mediumblue;
+      .WineInfo{
+        padding: 0 20px;
+        // background-color: mediumslateblue;
+        &__top{
+          // background-color: mediumvioletred;
+          // height: 100px;
+          width: 100%;
+          margin: 20px;
+          &--nameSpell{
+            font-size: 14px;
+            padding-left: 9px;
+          }
+          &--name{
+            font-size: 26px;
+            font-weight: bold;
+            color: #272727;
+            margin-bottom: 20px;
+            padding-left: 5px;
+          }
+          &--sparkling{
 
+          }
+          &--blanc{
+
+          }
+          &--rouge{
+            border-left: 5px solid #750225;
+          }
+          &--title{}
         }
-        h1{
-          margin-top: 10px;
-          color: #272727;
+        &__Price{
+          // background-color: midnightblue;
+          // height: 100px;
+          width: 100%;
+          margin: 20px;
           font-size: 26px;
           font-weight: bold;
-          line-height: calc(26/22);
         }
-      }
-      &__Lead{
-        margin-top: 10px;
-        font-size: 16px;
-        line-height: calc(28/16);
-      }
-      &__Date{
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        &__Price{
-        }
-        &__Car--btn{
-        }
-      }
-      &__Text{
-      }
-      &--Line{
-        width: 100%;
-        height: 1px;
-        background: #e5e5e5;
-        margin: 30px 0;
-      }
-      &__Info{
-        .Product__table{
-          background: #f9f9f9;
+        &__SubInfo{
+          // background-color: olive;
+          // height: 100px;
           width: 100%;
-          margin-top: 20px;
-          border-collapse: separate;
-          padding: 25px 25px;
-          tbody{
-            display: table-row-group;
-            vertical-align: middle;
-            border-color: inherit;
-            tr{
-              display: table-row;
-              vertical-align: inherit;
+          margin: 20px;
+        }
+        &__TasteComment{
+          // background-color: orange;
+          // height: 100px;
+          width: 100%;
+          margin: 20px;
+          &--ele{
+            // padding: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            padding: .3em .3em .3em 1.3em;
+          }
+          &--ele::after {
+            position: absolute;
+            content: '';
+            bottom: .8em;
+            left: .4em;
+            width: 12px;
+            height: 12px;
+            transform: rotate(45deg);
+          }
+          &--SP::after{
+            background-color: #dba800;
+          }
+          &--B::after{
+            background-color: #09e002;
+          }
+          &--R::after{
+            background-color: #750225;
+          }
+        }
+        &__ParsonalData{
+          // background-color: royalblue;
+          height: 100px;
+          width: 100%;
+          .Product__table{
+            background: #f9f9f9;
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: separate;
+            padding: 25px 25px;
+            tbody{
+              display: table-row-group;
+              vertical-align: middle;
               border-color: inherit;
-              th{
-                text-align: left;
-                width: 120px;
-                padding-left: 20px;
-                box-sizing: border-box;
-                font-size: 14px;
-                vertical-align: top;
-              }
-              td{
-                position: relative;
-                box-sizing: border-box;
-                padding-left: 20px;
-                font-size: 14px;
+              tr{
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+                // height: 40px;
+                th{
+                  text-align: left;
+                  width: 140px;
+                  padding: 10px 20px;
+                  box-sizing: border-box;
+                  font-size: 18px;
+                  // height: 40px;
+                  vertical-align: top;
+                }
+                td{
+                  position: relative;
+                  box-sizing: border-box;
+                  padding: 10px 20px;
+                  // height: 40px;
+                  font-size: 18px;
+                  border-left: 1px solid #bfc2c2;
+                }
               }
             }
           }
@@ -85,7 +233,47 @@
     }
   }
 }
+.sparkling{border-left: 5px solid #dba800;}
+.blanc{border-left: 5px solid #09e002;}
+.rouge{border-left: 5px solid #750225;}
+//       &__Info{
+//         .Product__table{
+//           background: #f9f9f9;
+//           width: 100%;
+//           margin-top: 20px;
+//           border-collapse: separate;
+//           padding: 25px 25px;
+//           tbody{
+//             display: table-row-group;
+//             vertical-align: middle;
+//             border-color: inherit;
+//             tr{
+//               display: table-row;
+//               vertical-align: inherit;
+//               border-color: inherit;
+//               th{
+//                 text-align: left;
+//                 width: 120px;
+//                 padding-left: 20px;
+//                 box-sizing: border-box;
+//                 font-size: 14px;
+//                 vertical-align: top;
+//               }
+//               td{
+//                 position: relative;
+//                 box-sizing: border-box;
+//                 padding-left: 20px;
+//                 font-size: 14px;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
+// #New
 .Content{
   padding: 40px;
   h1{

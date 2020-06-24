@@ -25,42 +25,47 @@
   // justify-content: space-between;
 }
 .AccountPage{
-  width: 400px;
+  width: 600px;
   height: 400px;
   top: 100px;
-  left: calc((100vw - 400px) / 2);
+  // text-align: center;
+  left: calc((100vw - 600px) / 2);
   position: absolute;
   border-radius: 20px;
-  background-color: red;
+  background-color: rgba(95, 1, 1, 0.7);
   justify-content: space-between;
-  .AccountPage__title {
-    width: 50%;
-    font-size: 14px;
-    font-weight: 200;
-
-    h2 {
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-      font-size: 40px;
-      &:after {
-        content: "";
-        display: block;
-        width: 60px;
-        margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
+  .Input_Field{
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    .AccountPage__title {
+      // width: 50%;
+      font-size: 14px;
+      font-weight: 200;
+      h2 {
+        margin-bottom: 10px;
+        letter-spacing: 3px;
+        font-size: 40px;
+        &:after {
+          content: "";
+          display: block;
+          width: 60px;
+          margin-top: 5px;
+          border-bottom: 1px solid #38aef0;
+        }
       }
-    }
 
-    .Button {
-      margin-top: 40px;
-      color: #fff;
-      background-color: #ccc;
+      .Button {
+        margin-top: 40px;
+        color: #fff;
+        background-color: #ccc;
+      }
     }
   }
 }
 
 .AccountPage__form {
-  width: 50%;
+  // width: 50%;
 }
 
 .FormField {
@@ -70,6 +75,7 @@
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 200;
+    text-align: left;
     i {
       font-size: 11px;
     }
@@ -83,8 +89,9 @@
     input {
       box-sizing: border-box;
       width: 100%;
-      padding: 10px;
+      padding: 5px;
       letter-spacing: 1px;
+      border-radius: 50px;
     }
     .field_with_errors {
       position: relative;
@@ -105,14 +112,15 @@
 
 .Button {
   display: inline-block;
-  height: 50px;
+  height: 30px;
   padding: 0 30px;
-  line-height: 50px;
+  line-height: 30px;
   letter-spacing: 1px;
   text-align: center;
   border: none;
   border-radius: 2px;
   text-decoration: none;
+  border-radius: 50px;
 }
 
 .UserButton {

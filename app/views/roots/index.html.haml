@@ -1,11 +1,55 @@
-.MainBody
-  .MainBody__Top
-    = image_tag ('top01.png'), class: 'TopImage'
+= javascript_include_tag 'root' 
+.TopBody
+  .containe
+    .slider
+      .slides
+        .slides__img.imageForce
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title Force slide
+            %h2.slide__caption__subtitle This is the fourth slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
+        .slides__img.imageFirst
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title
+              %a{href: "#1"} First slide
+            %h2.slide__caption__subtitle This is the first slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
+        .slides__img.imageSecond
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title
+              %a{href: "#2"} Second slide
+            %h2.slide__caption__subtitle This is the second slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
+        .slides__img.imageThird
+          .slides__img__filter
+          .slide__caption
+            %h1.slide__caption__title
+              %a{href: "#3"} Third slide
+            %h2.slide__caption__subtitle This is the third slide.
+            %h3.slide__caption__text Lorem ipsum dolor sit amet.
 
-  .MainBody__Sub
-    .SubInfo1
-      = image_tag ('top02.png'), class: 'SubInfo1--Image'
-    .SubInfo2
-      = image_tag ('top03.png'), class: 'SubInfo2--Image'
-    .SubInfo3
-      = image_tag ('top04.png'), class: 'SubInfo3--Image'
+    %a.control#prev
+      = icon('fas', 'chevron-left')
+    %a.control#next
+      = icon('fas', 'chevron-right')
+    .dots
+      .dots__single
+      .dots__single
+      .dots__single
+      .dots__single
+
+.MainBody
+  .SubInfo#1
+    .SubInfo__Field
+      = image_tag ('top02.png'), class: 'SubInfo__Field--Image'
+      ああああああああああああああ
+  .SubInfo#2
+    .SubInfo__Field.rightPosition
+      = image_tag ('top03.png'), class: 'SubInfo__Field--Image'
+      あああああああああああああああ
+  .SubInfo#3
+    .SubInfo__Field
+      = image_tag ('top04.png'), class: 'SubInfo__Field--Image'

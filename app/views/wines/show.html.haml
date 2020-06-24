@@ -1,45 +1,80 @@
-.wrapper
+.PaddingBox
+.WineHeader
+  .SearchField
+    %h1 Wines#index
+    %p Find me in app/views/wines/index.html.haml
+.PaddingBox2
+.WineItemInfomation
   .Product
     .Product__Left
-      .Product__Left__Image
-        = image_tag @wine.score_image_url, class: 'ChatField__Message__Image'
-      .Product__Left__Flever
+      .Product__Left__ImageBox
+        = image_tag @wine.productimages[0].image_url, class: 'Product__Left__ImageBox--image'
+      .Product__Left--flever
         フレーバー
-      .Product__Left__Body
+      .Product__Left--body
         ボディ
-      .Product__Left__Taste
+      .Product__Left--taste
         味わい
     .Product__Right
-      .Product__Right__Name
-        %p MONTES ALPHA CABERNET SAUVIGNON EDICION LIMITADA 30 ANOS
-        %h1 モンテス・アルファ・カベルネ・ソーヴィニヨン エディシオン・リミターダ・30・アニョス
-      %p.Product__Right__Lead
-        トップキュヴェ「アルファ・エム」のエッセンスが注ぎ込まれた渾身の1本。
-        パワー溢れる果実の旨味と溌剌とした酸が魅力。
-      .Product__Right__Date
-        .Product__Right__Date__Price
-          6,000円
-        .Product__Right__Date__Car--btn
-          カートボタン
-      %p.Product__Right__Text
-        外観は深みのあるルビー色。ブラックチェリーや黒スグリの熟した果実香に加え、ミントや黒鉛、チョコレート、シガー、スパイスのニュアンスが巧妙に溶け合っています。
-        丸みを帯びた上品なタンニンが骨格を造り、凝縮感のある黒系果実の風味に爽やかなハーブのタッチが重なったエレガントな味わい。余韻は長く、高い熟成ポテンシャルを感じさせる豊かな味わいがお愉しみいただけます。
-      %hr.Product__Right--Line
-      .Product__Right__Info
-        %table.Product__table
-          %tbody
-            %tr
-              %th 生産者
-              %td モンテスSA
-            %tr
-              %th 生産地
-              %td チリ
-            %tr
-              %th 原産地呼称
-              %td A.O.C
-            %tr
-              %th タイプ
-              %td 赤ワイン
-            %tr
-              %th 品種
-              %td カベルネ・ソービニヨン
+      .WineInfo
+        .WineInfo__top
+          - case @wine.wine_type_id
+            - when 1 then
+              .WineInfo__top--nameSpell.sparkling
+                = @wine.name_spell
+              .WineInfo__top--name.sparkling
+                = @wine.name
+            - when 2 then
+              .WineInfo__top--nameSpell.blanc
+                = @wine.name_spell
+              .WineInfo__top--name.blanc
+                = @wine.name
+            - when 3 then
+              .WineInfo__top--nameSpell.rouge
+                = @wine.name_spell
+              .WineInfo__top--name.rouge
+                = @wine.name
+          .WineInfo__top--title
+            = @wine.title
+        .WineInfo__Price
+          = @wine.price
+        .WineInfo__SubInfo
+          = @wine.comment
+        %hr
+        .WineInfo__TasteComment
+          - case @wine.wine_type_id
+            - when 1 then
+              .WineInfo__TasteComment--ele.WineInfo__TasteComment--SP 味わい
+            - when 2 then
+              .WineInfo__TasteComment--ele.WineInfo__TasteComment--B 味わい
+            - when 3 then
+              .WineInfo__TasteComment--ele.WineInfo__TasteComment--R 味わい
+          = @wine.taste_comment
+        %hr
+        .WineInfo__ParsonalData
+          %table.Product__table
+            %tbody
+              %tr
+                %th 生産者
+                %td
+                  = @wine.producer
+              %tr
+                %th 生産地
+                %td
+                  = "#{@wine.domaine.name} / #{@wine.chator}"
+              %tr
+                %th 原産地呼称
+                %td A.O.C
+              %tr
+                %th タイプ
+                %td
+                  = @wine.wine_type.group
+              %tr
+                %th 品種
+                %td
+                  - @wine.sepages.each do |sepage|
+                    = sepage.name
+                    %br
+              %tr
+                %th おすすめ料理
+                %td 
