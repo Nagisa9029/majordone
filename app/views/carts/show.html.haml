@@ -26,8 +26,16 @@
                   = "タイプ：#{item.wine.wine_type.group}"
                 .CratWine--element
                   = "#{number_with_delimiter(item.wine.price)}円"
-              %td{:align => "center"} 削除
-              %td{:align => "center"} ５０００円
+              %td{:align => "center"}
+                %select{style: "height: 30px; width: 50px;"}
+                  %option 1
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+
+              %td{:align => "center"}
+                = ５０００円
       %hr
     .Cart__Price
       合計　　　？？？円
