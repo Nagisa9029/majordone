@@ -1,0 +1,44 @@
+.PaddingBox
+.WineHeader
+  .SearchField
+    .SearchField__online
+      online shop
+    .SearchField__left
+      %h1  Search Field
+    .SearchField__right
+      %ul.IconBox
+        = link_to "#", class: "IconBox__Btn" do
+          %li
+            .IconBox__count
+              -# - if !@cart.cart_items.size.blank?
+              -#   .IconBox__count--num
+              -#     = @cart.cart_items.size
+            = icon('fas', 'file-invoice-dollar', class: "IconBox--icon")
+            購入履歴
+        = link_to "#", class: "IconBox__Btn" do
+          %li
+            .IconBox__count
+              -# - if !@cart.cart_items.size.blank?
+              -#   .IconBox__count--num
+              -#     = @cart.cart_items.size
+            = icon('fas', 'history', class: "IconBox--icon")
+            閲覧履歴
+        = link_to "#", class: "IconBox__Btn" do
+          %li
+            .IconBox__count
+              -# - if !@cart.cart_items.size.blank?
+              -#   .IconBox__count--num
+              -#     = @cart.cart_items.size
+            = icon('far', 'heart', class: "IconBox--icon")
+            お気に入り
+        = link_to cart_path(current_user.cart.id), class: "IconBox__Btn" do
+          %li
+            .IconBox__count
+              - if !@cart.cart_items.size.blank?
+                .IconBox__count--num
+                  = @cart.cart_items.size
+            = icon('fas', 'cart-arrow-down', class: "IconBox--icon")
+            カート
+  %hr
+
+.PaddingBox2

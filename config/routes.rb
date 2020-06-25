@@ -7,11 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update] do
   end
 
-  resources :wines
-  resources :recipes
-  resources :roots, only: [:create] do
-  end
-
   get '/butler' => 'roots#butler', as: 'butler_root'
   get '/homepage' => 'roots#homepage', as: 'homepage_root'
   namespace :homepages do
@@ -19,5 +14,15 @@ Rails.application.routes.draw do
     resources :recipelists, only: [:index, :show]
   end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :wines do
+    resource :cart_items, only: [:create]
+  end
+  
+  resources :carts, only: [:create, :show] do
+    resource :cart_items, only: [:destroy]
+  end
+
+  resources :recipes
+  resources :roots, only: [:create] do
+  end
 end

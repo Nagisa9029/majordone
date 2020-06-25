@@ -1,9 +1,5 @@
-.PaddingBox
-.WineHeader
-  .SearchField
-    %h1 Wines#index
-    %p Find me in app/views/wines/index.html.haml
-.PaddingBox2
+= render "shop_header"
+
 .WineBody
   .WineSide
     a
@@ -32,12 +28,14 @@
             .Products__Box__center--info
               = "タイプ：#{wine.wine_type.group}"
             .Products__Box__center--info
-              = "生産地：#{wine.domaine.name} / #{wine.chator}"
+              生産地：
+              = image_tag wine.domaine.flag_url, class: 'frag_image'
+              = "#{wine.domaine.name} / #{wine.chator}"
             .Products__Box__center--info
               = "説　明：#{wine.title}"
           %hr
           .Products__Box__right
-            = wine.price
+            = "#{number_with_delimiter(wine.price)}円"
         %hr
       .p-top__paginate
         = paginate @wines

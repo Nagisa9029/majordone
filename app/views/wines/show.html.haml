@@ -1,9 +1,5 @@
-.PaddingBox
-.WineHeader
-  .SearchField
-    %h1 Wines#index
-    %p Find me in app/views/wines/index.html.haml
-.PaddingBox2
+= render "shop_header"
+
 .WineItemInfomation
   .Product
     .Product__Left
@@ -37,7 +33,10 @@
           .WineInfo__top--title
             = @wine.title
         .WineInfo__Price
-          = @wine.price
+          = "#{number_with_delimiter(@wine.price)}円"
+          = link_to wine_cart_items_path(@wine.id), method: :post do
+            %button.btn{style: "display: inline-block; height: 50px; width: 150px; background-color: #440000; color: gold;"} カートに入れる
+
         .WineInfo__SubInfo
           = @wine.comment
         %hr
@@ -61,6 +60,7 @@
               %tr
                 %th 生産地
                 %td
+                  = image_tag @wine.domaine.flag_url, class: 'frag_image'
                   = "#{@wine.domaine.name} / #{@wine.chator}"
               %tr
                 %th 原産地呼称
@@ -78,3 +78,4 @@
               %tr
                 %th おすすめ料理
                 %td 
+

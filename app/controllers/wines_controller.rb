@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+  before_action :set_group
 
   def index
     @wines = Wine.page(params[:page]).per(20)
@@ -132,5 +133,9 @@ class WinesController < ApplicationController
                                       :image,
                                       :_destroy
                                       ])
+  end
+
+  def set_group
+    @cart = Cart.find(current_user.id)
   end
 end

@@ -1,0 +1,32 @@
+.CartBody{
+  width: 100vw;
+  .Cart{
+    width: 70%;
+    margin: 0 auto;
+    height: 700px;
+    border: 1px solid;
+    border-color: rgb(207, 207, 207);
+    // background-color: royalblue;
+    display: flex;
+    padding: 20px;
+    .Cart__Table{
+      // background-color: saddlebrown;
+      height: 100px;
+      width: 100%;
+    }
+    .Cart__Price{
+      background-color: #dfdfdf;
+      height: 450px;
+      width: 230px;
+      margin-left: 20px;
+      border: 1px solid;
+      border-color: rgb(207, 207, 207);
+    }
+  }
+}
+
+.CratWine--image{
+  height: 100px;
+  border: 1px solid;
+  border-color: rgb(207, 207, 207);
+}

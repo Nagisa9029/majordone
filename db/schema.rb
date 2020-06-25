@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_152621) do
+ActiveRecord::Schema.define(version: 2020_06_24_102625) do
 
   create_table "blanc_parames", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -29,10 +29,27 @@ ActiveRecord::Schema.define(version: 2020_06_21_152621) do
     t.index ["user_id"], name: "index_blanc_parames_on_user_id"
   end
 
+  create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "cart_id", null: false
+    t.bigint "wine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["wine_id"], name: "index_cart_items_on_wine_id"
+  end
+
+  create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
   create_table "domaines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "flag"
     t.index ["name"], name: "index_domaines_on_name", unique: true
   end
 
@@ -161,6 +178,8 @@ ActiveRecord::Schema.define(version: 2020_06_21_152621) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "taste_comment"
     t.boolean "wine_flg", default: false, null: false
+    t.string "aoc"
+    t.string "cuisine"
     t.index ["domaine_id"], name: "index_wines_on_domaine_id"
     t.index ["name"], name: "index_wines_on_name"
     t.index ["name_spell"], name: "index_wines_on_name_spell"

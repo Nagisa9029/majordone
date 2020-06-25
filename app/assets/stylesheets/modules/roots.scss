@@ -27,8 +27,8 @@ $base-hue: 0; // change for diff colors (180 is nice)
 
 .butler {
   background: radial-gradient(black, rgb(151, 151, 151));
-  height: calc(100vh - 70px);
-  padding-top: 70px;
+  height: 100vh;
+  // padding-top: 70px;
   overflow: hidden; // no scrollbars.. 
 }
 

@@ -1,2 +1,0 @@
-class CartIteme < ApplicationRecord
-end

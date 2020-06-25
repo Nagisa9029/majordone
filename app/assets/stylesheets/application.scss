@@ -5,6 +5,7 @@
 @import "modules/user";
 @import "modules/wine";
 @import "modules/winelists";
+@import "modules/cart";
 @import "bootstrap";
 
 body{
@@ -87,7 +88,7 @@ header{
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 10;
+  z-index: 100;
   transform: translate(250px);
   transition: all .5s;
   &.open{

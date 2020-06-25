@@ -4,6 +4,8 @@ class Wine < ApplicationRecord
   belongs_to :wine_type
   has_many :wine_sepages
   has_many :sepages, through: :wine_sepages
+  has_many :cart_items
+  has_many :carts, through: :cart_items
 
   accepts_nested_attributes_for :productimages, allow_destroy: true
   mount_uploader :score_image, ImageUploader
