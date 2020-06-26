@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_one :rougeParame
   has_one :blancParame
   has_one :sparklingParame
+  has_one :cart
 end

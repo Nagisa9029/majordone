@@ -3,7 +3,6 @@
 	position:absolute;
 	width: 100vw;
   height: calc(100vh - 70px);
-  margin-top: 70px;
 	background-color: #fff;
 	background-image: url("");
 	background-repeat: no-repeat;
@@ -14,47 +13,33 @@
 .AccountField {
   display: flex;
   position: relative;
-  // width: 100vw;
-  // height: calc(100vh - 70px);
-  // margin-top: 70px;
-  // padding: 60px;
-  // background-color: #fff;
-  // border: 1px solid #ddd;
-  // border-radius: 5px;
-  // display: flex;
-  // justify-content: space-between;
 }
 .AccountPage{
   width: 600px;
   height: 400px;
   top: 100px;
-  // text-align: center;
+  padding-top: 30px;
+  margin-top: 50px;
   left: calc((100vw - 600px) / 2);
   position: absolute;
   border-radius: 20px;
   background-color: rgba(95, 1, 1, 0.7);
+  box-shadow: 5px 5px 5px 10px rgba(0,0,0,0.5);
   justify-content: space-between;
   .Input_Field{
     margin: 0 auto;
     width: 70%;
     text-align: center;
     .AccountPage__title {
-      // width: 50%;
       font-size: 14px;
       font-weight: 200;
+      margin-top: 20px;
       h2 {
         margin-bottom: 10px;
         letter-spacing: 3px;
         font-size: 40px;
-        &:after {
-          content: "";
-          display: block;
-          width: 60px;
-          margin-top: 5px;
-          border-bottom: 1px solid #38aef0;
-        }
+        border-bottom: 1px solid #6c7174;
       }
-
       .Button {
         margin-top: 40px;
         color: #fff;
@@ -63,15 +48,15 @@
     }
   }
 }
-
-.AccountPage__form {
-  // width: 50%;
+.Regiistration{
+  height: 530px;
+  margin-top: 30px;
+  padding-top: 0
 }
-
 .FormField {
   margin-bottom: 10px;
   &__label--normal {
-    padding: 10px 0;
+    padding: 10px 0 0;
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 200;
@@ -151,5 +136,18 @@
     margin: 0;
     padding: 0;
     font-size: 13px;
+  }
+}
+
+
+// #edit
+.Accountedit{
+  // background-color: skyblue;
+  height: 1000px;
+  .Accountedit__Field{
+    width: 60%;
+    height: 700px;
+    // background-color: slateblue;
+    margin: 0 auto;
   }
 }

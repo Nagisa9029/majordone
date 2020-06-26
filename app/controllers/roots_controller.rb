@@ -1,5 +1,6 @@
 class RootsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :create_cart, only:[:index]
 
   def index
   end
@@ -12,9 +13,17 @@ class RootsController < ApplicationController
 
   def create
     str = params[:taste_params].gsub(/,/, '')
-    @blancParame = BlancParame.new
-    blanc_parame = BlancParame.input(str)
+    if BlancParame.find_by(user_id: str[0].to_i).nil?
+      @blancParame = BlancParame.new
+      @rougeParame = RougeParame.new
+      @sparklingParame = SparklingParame.new
+    else
+      @blancParame = BlancParame.find_by(user_id: str[0].to_i)
+      @rougeParame = RougeParame.find_by(user_id: str[0].to_i)
+      @sparklingParame = SparklingParame.find_by(user_id: str[0].to_i)
+    end
 
+    blanc_parame = BlancParame.input(str)
     @blancParame.user_id = blanc_parame[:user_id]
     @blancParame.attack = blanc_parame[:attack]
     @blancParame.body = blanc_parame[:body]
@@ -27,9 +36,7 @@ class RootsController < ApplicationController
     @blancParame.score_image = File.open('./app/assets/images/user_blanc_graph.png')
     @blancParame.save
 
-    @rougeParame = RougeParame.new
     rouge_parame = RougeParame.input(str)
-    
     @rougeParame.user_id = rouge_parame[:user_id]
     @rougeParame.attack = rouge_parame[:attack]
     @rougeParame.body = rouge_parame[:body]
@@ -43,9 +50,7 @@ class RootsController < ApplicationController
     @rougeParame.score_image = File.open('./app/assets/images/user_rouge_graph.png')
     @rougeParame.save
 
-    @sparklingParame = SparklingParame.new
     sparkling_parame = SparklingParame.input(str)
-
     @sparklingParame.user_id = sparkling_parame[:user_id]
     @sparklingParame.attack = sparkling_parame[:attack]
     @sparklingParame.body = sparkling_parame[:body]
@@ -61,6 +66,14 @@ class RootsController < ApplicationController
 
     redirect_to butler_root_path
 
+  end
+
+  def create_cart
+    if Cart.where(user_id: current_user.id).blank?
+      cart = Cart.new
+      cart.user_id = current_user.id
+      cart.save
+    end
   end
 end
 

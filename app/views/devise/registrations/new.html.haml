@@ -2,7 +2,7 @@
 = javascript_include_tag 'setting'
 
 .AccountField#particles-js
-  .AccountPage
+  .AccountPage.Regiistration
     .Input_Field
       .AccountPage__title
         %h2 Create Account
@@ -31,6 +31,6 @@
               %i (確認用)
             .FormField__input--normal
               = f.password_field :password_confirmation, autocomplete: "off"
-          .actions
+          .actions 
             = f.submit "Create Account", class: 'Button UserButton'
         = render "devise/shared/links"

@@ -2,11 +2,14 @@
   -# %div.wrap
   -#   -300.times do
   -#     %div.c
+  .PaddingBox
   .Chat
     .Chat__SideMenu
       .Chat__SideMenu__Butlerinfo
         = image_tag ('neko.png'), class: 'nekoImg'
       .Chat__SideMenu__ButlerText
+        Butler：
+        %br
         = current_user.nickname
         様、
         %br

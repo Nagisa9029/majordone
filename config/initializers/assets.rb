@@ -15,3 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w[particles.min.js]
 Rails.application.config.assets.precompile += %w[setting.js]
 Rails.application.config.assets.precompile += %w[root.js]
+Rails.application.config.assets.precompile += %w[wines.js]

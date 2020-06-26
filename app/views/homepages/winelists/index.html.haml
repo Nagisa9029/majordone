@@ -1,7 +1,10 @@
 .PaddingBox
 .MyWineField
-  .Butler_Info 
-    = "#{current_user.nickname}様にオススメのワインをリストアップいたしました。"
+  .Butler_Info
+    .Butler_Info--neko
+      = image_tag ('neko_turushi.png'), class: 'nekoTurushuImg'
+    .Butler_Info--comment
+      = "#{current_user.nickname}様にオススメのワインをリストアップいたしました。"
   .MenuTabField
     .MenuTab
       %ul.Winelist
@@ -22,28 +25,36 @@
             = link_to wine_path(wine.id), class: 'no-underline' do
               = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
             .WineContent__Box--domeine
+              = image_tag wine.domaine.flag_url, class: 'frag_image'
               = "#{wine.domaine.name} / #{wine.chator}"
             .WineContent__Box--name
-              = wine.name
+              = link_to wine_path(wine.id), class: 'no-underline' do
+                = wine.name
             .WineContent__Box--title
               = wine.title
       %li.WineContent
-        -# - @blancWines.each do |wine|
-        -#   .WineContent__Box
-        -#     = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
-        -#     .WineContent__Box--domeine
-        -#       = "#{wine.domaine.name} / #{wine.chator}"
-        -#     .WineContent__Box--name
-        -#       = wine.name
-        -#     .WineContent__Box--title
-        -#       = wine.title
+        - @blancWines.each do |wine|
+          .WineContent__Box
+            = link_to wine_path(wine.id), class: 'no-underline' do
+              = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
+            .WineContent__Box--domeine
+              = image_tag @wine.domaine.flag_url, class: 'frag_image'
+              = "#{wine.domaine.name} / #{wine.chator}"
+            .WineContent__Box--name
+              = link_to wine_path(wine.id), class: 'no-underline' do
+                = wine.name
+            .WineContent__Box--title
+              = wine.title
       %li.WineContent
-        -# - @rougeWines.each do |wine|
-        -#   .WineContent__Box
-        -#     = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
-        -#     .WineContent__Box--domeine
-        -#       = "#{wine.domaine.name} / #{wine.chator}"
-        -#     .WineContent__Box--name
-        -#       = wine.name
-        -#     .WineContent__Box--title
-        -#       = wine.title
+        - @rougeWines.each do |wine|
+          .WineContent__Box
+            = link_to wine_path(wine.id), class: 'no-underline' do
+              = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
+            .WineContent__Box--domeine
+              = image_tag wine.domaine.flag_url, class: 'frag_image'
+              = "#{wine.domaine.name} / #{wine.chator}"
+            .WineContent__Box--name
+              = link_to wine_path(wine.id), class: 'no-underline' do
+                = wine.name
+            .WineContent__Box--title
+              = wine.title

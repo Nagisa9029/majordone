@@ -1,7 +1,9 @@
 .p-top__paginate{
   margin-left: 200px;
 }
-
+.frag_image{
+  height: 14px;
+}
 // #index
 .PaddingBox{
   height: 70px;
@@ -10,21 +12,76 @@
   height: 50px;
 }
 .WineHeader{
-  height: 50px;
+  height: 68px;
   width: 100vw;
   margin: 0 auto;
-  background-color: purple;
   position: fixed;
+  background-color: #fff;
+  z-index: 20;
   .SearchField{
-    background-color: red;
     height: 50px;
     width: 90%;
     margin: 0 auto;
+    position: relative;
+    &__online{
+      position: absolute;
+      left: 250px;
+      top: -42px;
+      font-size: 27px;
+      z-index: 20;
+      color: rgb(116, 113, 113);
+    }
+    &__left{
+      position: absolute;
+      color: rgb(116, 113, 113);
+    }
+    &__right{
+      width: 300px;
+      position: absolute;
+      right: 0;
+      .IconBox{
+        display: flex;
+        justify-content: space-around;
+        li{
+          margin-top: 14px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          font-size: 14px;
+          color: rgb(116, 113, 113);
+        }
+        &__count{
+          position: relative;
+          &--num{
+            position: absolute;
+            top: -14px;
+            right: 0;
+            height:20px;
+            width:20px;
+            border-radius:50%;
+            background-color: rgb(117, 4, 4);
+            line-height:20px;
+            text-align:center;
+            color: #fff;
+          }
+        }
+        &--icon{
+          font-size: 2.1em;
+          color: rgb(141, 138, 138);
+        }
+      }
+    }
   }
+}
+.IconBox__Btn:hover {
+  text-decoration: none;
+}
+.IconLists--icon{
+  height: 100px;
+  width: 100px;
 }
 .WineBody{
   width: 80%;
-  // background-color: lightsteelblue;
   margin: 0 auto;
   // height: 1000px;
   display: flex;
@@ -36,7 +93,6 @@
   .WineMainField{
     padding: 30px;
     .Products{
-      // background-color: magenta;
       width: 100%;
       height: 100%;
 
@@ -46,7 +102,6 @@
         margin-bottom: 20px;
         display: flex;
         &__left{
-          // background-color: maroon;
           width: 150px;
           padding-top: 20px;
           &--image{
@@ -56,7 +111,6 @@
           }
         }
         &__center{
-          // background-color: mediumaquamarine;
           padding: 20px;
           width: 100%;
           &--name{
@@ -67,9 +121,8 @@
           }
         }
         &__right{
-          // background-color: mediumblue;
           padding: 20px;
-          width: 100px;
+          width: 150px;
         }
       }
     }
@@ -78,33 +131,65 @@
 
 // #Show
 .WineItemInfomation{
-  // padding: 40px 100px;
   width: 100vw;
-  height: 1000px;
-  // background-color: mediumseagreen;
+  height: 1100px;
   .Product{
     display: flex;
     width: 80%;
     margin: 0 auto;
     padding: 50px 0;
     &__Left{
-      background-color: mediumorchid;
       width: 600px;
-      // height: 100%;
       &__ImageBox{
-        background-color: rgb(6, 12, 9);
         height: 400px;
-        // width: 500px;
-        &--image{
+        #list{
+          float: left;
+          .List--image{
+            height: 60px;
+            display: block;
+            margin: 0 auto;
+          }
+          li{
+            border: 1px solid;
+            border-color: rgb(207, 207, 207);
+            margin: 5px;
+          }
+        }
+        #main{
           height: 300px;
-        //   border: 1px solid;
-        //   border-color: rgb(207, 207, 207);
+          width: 300px;
+          float: right;
+          border: 1px solid;
+          border-color: rgb(207, 207, 207);
+          .Main--image{
+            height: 300px;
+            margin: 0 auto;
+            display: block;
+          }
         }
       }
-      &--flever{
-      }
+      // &--flever{
+      //   background-color: rgb(105, 243, 84);
+      // }
       &--body{
-
+        margin-bottom: 50px;
+        .Bar__Para{
+          width: 70%;
+          margin: 0 auto;
+          &__bar{
+            border-radius: 50px;
+            display: flex;
+            &--ele{
+              border-radius: 50px 0 0 50px;
+            }
+            .Mav_body{
+              border-radius: 50px;
+            }
+          }
+          &--body{
+            font-size: 10px;
+          }
+        }
       }
       &--taste{
 
@@ -112,14 +197,9 @@
     }
     &__Right{
       width: 100%;
-      // height: 100%;
-      // background-color: mediumblue;
       .WineInfo{
         padding: 0 20px;
-        // background-color: mediumslateblue;
         &__top{
-          // background-color: mediumvioletred;
-          // height: 100px;
           width: 100%;
           margin: 20px;
           &--nameSpell{
@@ -145,26 +225,19 @@
           &--title{}
         }
         &__Price{
-          // background-color: midnightblue;
-          // height: 100px;
           width: 100%;
           margin: 20px;
           font-size: 26px;
           font-weight: bold;
         }
         &__SubInfo{
-          // background-color: olive;
-          // height: 100px;
           width: 100%;
           margin: 20px;
         }
         &__TasteComment{
-          // background-color: orange;
-          // height: 100px;
           width: 100%;
           margin: 20px;
           &--ele{
-            // padding: 5px;
             font-size: 18px;
             font-weight: bold;
             position: relative;
@@ -190,7 +263,6 @@
           }
         }
         &__ParsonalData{
-          // background-color: royalblue;
           height: 100px;
           width: 100%;
           .Product__table{
@@ -207,22 +279,19 @@
                 display: table-row;
                 vertical-align: inherit;
                 border-color: inherit;
-                // height: 40px;
                 th{
                   text-align: left;
                   width: 140px;
                   padding: 10px 20px;
                   box-sizing: border-box;
-                  font-size: 18px;
-                  // height: 40px;
+                  font-size: 16px;
                   vertical-align: top;
                 }
                 td{
                   position: relative;
                   box-sizing: border-box;
                   padding: 10px 20px;
-                  // height: 40px;
-                  font-size: 18px;
+                  font-size: 16px;
                   border-left: 1px solid #bfc2c2;
                 }
               }
@@ -236,42 +305,11 @@
 .sparkling{border-left: 5px solid #dba800;}
 .blanc{border-left: 5px solid #09e002;}
 .rouge{border-left: 5px solid #750225;}
-//       &__Info{
-//         .Product__table{
-//           background: #f9f9f9;
-//           width: 100%;
-//           margin-top: 20px;
-//           border-collapse: separate;
-//           padding: 25px 25px;
-//           tbody{
-//             display: table-row-group;
-//             vertical-align: middle;
-//             border-color: inherit;
-//             tr{
-//               display: table-row;
-//               vertical-align: inherit;
-//               border-color: inherit;
-//               th{
-//                 text-align: left;
-//                 width: 120px;
-//                 padding-left: 20px;
-//                 box-sizing: border-box;
-//                 font-size: 14px;
-//                 vertical-align: top;
-//               }
-//               td{
-//                 position: relative;
-//                 box-sizing: border-box;
-//                 padding-left: 20px;
-//                 font-size: 14px;
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+.Mav_body{border-radius: 50px;}
+.Rouge_border{border: 2px solid #750225;}
+.Rouge_bar{background-color: #750225;color: #750225;}
+.Blanc_border{border: 2px solid #09e002;}
+.Blanc_bar{background-color: #09e002;color: #09e002;}
 
 // #New
 .Content{
@@ -283,7 +321,7 @@
   .CreateForm{
     margin: 50px;
     &__Info{
-      background: #f9f9f9;
+      background: #c2c1c1;
       width: 100%;
       margin-top: 20px;
       border-collapse: separate;

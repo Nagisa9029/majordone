@@ -2,17 +2,24 @@
   text-decoration: none;
 }
 .MainBody{
-  margin: 75px 200px 70px;
+  margin: 0 auto 75px;
+  width: 85%;
   .SubInfo{
     height: calc(100vh - 70px);
-    display: flex;
-    align-items: center;
+    padding-top: 200px;
     &__Field{
-      height: 400px;
-      &--Image{
-        width: 100%;
+      &__Photo{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
         height: 400px;
-        overflow: hidden;
+        &--title{
+          font-size: 30px;
+          color: #fff;
+        }
+      }
+      &--Sub{
+        height: calc(100vh - 600px);
       }
     }
   }
@@ -27,8 +34,8 @@ $base-hue: 0; // change for diff colors (180 is nice)
 
 .butler {
   background: radial-gradient(black, rgb(151, 151, 151));
-  height: calc(100vh - 70px);
-  padding-top: 70px;
+  height: 100vh;
+  // padding-top: 70px;
   overflow: hidden; // no scrollbars.. 
 }
 
@@ -52,8 +59,8 @@ $base-hue: 0; // change for diff colors (180 is nice)
   &__SideMenu{
     width: 300px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background-color: rgba(70, 40, 40, 0.5);
+    color: rgb(201, 186, 186);
     &__Butlerinfo{
       padding: 10px 0;
     }
@@ -66,7 +73,7 @@ $base-hue: 0; // change for diff colors (180 is nice)
         text-decoration: none;
         padding: 10px 20px;
         border-bottom: 0.2px solid #fff;
-        color: #fff;
+        color: rgb(172, 167, 167);
       }
     }
   }

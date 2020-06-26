@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+  before_action :set_group
 
   def index
     @wines = Wine.page(params[:page]).per(20)
@@ -6,6 +7,7 @@ class WinesController < ApplicationController
 
   def show
     @wine = Wine.find(params[:id])
+    gon.taste = {body: @wine.body, fruit_flavor: @wine.fruit_flavor, taste: @wine.taste, acidity: @wine.acidity, astringency: @wine.astringency}
   end
 
   def new
@@ -132,5 +134,9 @@ class WinesController < ApplicationController
                                       :image,
                                       :_destroy
                                       ])
+  end
+
+  def set_group
+    @cart = Cart.find(current_user.cart.id)
   end
 end
