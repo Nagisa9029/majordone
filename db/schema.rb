@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_24_102625) do
+ActiveRecord::Schema.define(version: 2020_06_25_123246) do
 
   create_table "blanc_parames", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_102625) do
     t.bigint "wine_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "purchase_num", default: 1
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
     t.index ["wine_id"], name: "index_cart_items_on_wine_id"
   end

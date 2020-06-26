@@ -33,9 +33,14 @@
                   %option 3
                   %option 4
                   %option 5
+                
+                = link_to cart_cart_items_path(id: item.id, wine_id: item.wine_id, cart_id: @cart.id), method: :delete do
+                  %button.btn{style: "display: inline-block; height: 30px; width: 70px; background-color: #440000; color: gold;"} 削除
+
 
               %td{:align => "center"}
-                = ５０００円
+                ５０００円
+                                  
       %hr
     .Cart__Price
       合計　　　？？？円

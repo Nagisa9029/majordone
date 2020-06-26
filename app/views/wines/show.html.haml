@@ -1,16 +1,30 @@
+= javascript_include_tag 'wines' 
 = render "shop_header"
 
 .WineItemInfomation
   .Product
     .Product__Left
       .Product__Left__ImageBox
-        = image_tag @wine.productimages[0].image_url, class: 'Product__Left__ImageBox--image'
-      .Product__Left--flever
-        フレーバー
+        %ul#list
+          %li
+            = image_tag @wine.productimages[1].image_url, class: 'List--image'
+          %li
+            = image_tag @wine.productimages[0].image_url, class: 'List--image'
+        #main
+          = image_tag @wine.productimages[1].image_url, class: 'Main--image'
+      -# .Product__Left--flever
+      -#   フレーバー
       .Product__Left--body
-        ボディ
+        %h4 ボディ
+        .Bar__Para
+          .Bar__Para__bar
+            .Bar__Para__bar--ele
+              = @wine.body
+          .Bar__Para--body
+            ライトボディ　　　　ミディアムボディ　　　　フルボディ
       .Product__Left--taste
-        味わい
+        %h4 味わい
+        %canvas#myChart
     .Product__Right
       .WineInfo
         .WineInfo__top

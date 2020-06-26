@@ -2,19 +2,16 @@ class CartItemsController < ApplicationController
   before_action :set_group
 
   def create
-    cart = Cart.where(user_id: current_user.id)
-    if cart == []
-      cart = Cart.new
-      cart.user_id = current_user.id
-      cart.save
-    end
-    @cart_item = CartItem.new(cart_id: current_user.cart.id, wine_id: @wine.id)
+    cart = Cart.find(current_user.id)
+    @cart_item = CartItem.new(cart_id: cart.id, wine_id: @wine.id)
     @cart_item.save
-    redirect_to cart_path(current_user.cart.id)
+    redirect_to cart_path(cart.id)
   end
 
   def destroy
-    
+    cart_item = CartItem.find_by(id: params[:id], wine_id: params[:wine_id], cart_id: params[:cart_id])
+    cart_item.destroy
+    redirect_to cart_path(params[:cart_id])
   end
 
   private
