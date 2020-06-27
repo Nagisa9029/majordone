@@ -198,10 +198,10 @@ $base-hue: 0; // change for diff colors (180 is nice)
 .slides {width: calc(100% * 4); height: 100%; position: relative; left: -100%;}
 .slides__img {width: calc(100% / 4); height: 100%; float: left; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;}
 .slides__img__filter {width: 100%; height: 100%; background-color: #000; position: absolute; top: 0; left: 0; z-index: 10; opacity: 0.3;}
-.imageFirst{background-image: url('top01.png');}
-.imageSecond{background-image: url('top02.png');}
-.imageThird{background-image: url('top03.png');}
-.imageForce{background-image: url('top04.png');}
+.imageFirst{background-image: image-url('top01.png');}
+.imageSecond{background-image: image-url('top02.png');}
+.imageThird{background-image: image-url('top03.png');}
+.imageForce{background-image: image-url('top04.png');}
 /* #Captions */
 .slide__caption {width: 100%; text-align: center; color: #fff; position: absolute; bottom: 5%; z-index: 20; opacity: 0}
 .slide__caption__title {font-size: 3em; line-height: 1.05em;}
