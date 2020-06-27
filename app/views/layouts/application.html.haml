@@ -23,9 +23,19 @@
               %span
               %span
               %span
+        - else
+          .menu
+            = link_to about_root_path do
+              MaJordomeについて
     - if user_signed_in?
       %nav#slide-menu
-        %div#user-info
+        .user-info
+          .user-info__image
+            = image_tag ('somliere.svg'), class: 'somliere'
+          .user-info__name
+            UserName :
+            %h4
+              = current_user.nickname
         %ul
           = link_to homepage_root_path, class: 'no-underline' do
             %li My Menu(/user#edit)

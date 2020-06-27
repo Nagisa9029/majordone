@@ -1,6 +1,10 @@
 class RootsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authenticate_user!, only:[:index, :homepage, :butler, :create, :create_cart]
   before_action :create_cart, only:[:index]
+
+  def about
+  end
 
   def index
   end

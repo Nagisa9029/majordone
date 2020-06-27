@@ -1,4 +1,5 @@
 class Homepages::RecipelistsController < ApplicationController
+  before_action :authenticate_user!
   def index
 
     #     # サンプルデータ生成

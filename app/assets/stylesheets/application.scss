@@ -95,8 +95,18 @@ header{
   &.open{
     transform: translate(0);
   }
-  #user-info{
-    height: 200px;
+  .user-info{
+    padding: 30px 20px 0 10px;
+    height: 150px;
+    display: flex;
+    &__image{
+      .somliere{
+        height: 80px;
+      }
+    }
+    &__name{
+      margin: 20px;
+    }
   }
   ul{
     padding: 20px 0;

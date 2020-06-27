@@ -34,7 +34,7 @@ $(function(){
     }
   });
 
-  let body_para = taste["body"] * 27
+  let body_para = taste["body"] * 27.3
     $('.Bar__Para__bar--ele').animate({width: body_para}, 5000);
     if (taste["body"] == 10){
       $('.Bar__Para__bar--ele').addClass('Mav_body');

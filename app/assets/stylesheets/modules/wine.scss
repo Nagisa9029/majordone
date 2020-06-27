@@ -141,7 +141,7 @@
     &__Left{
       width: 600px;
       &__ImageBox{
-        height: 400px;
+        height: 350px;
         #list{
           float: left;
           .List--image{
@@ -225,10 +225,18 @@
           &--title{}
         }
         &__Price{
-          width: 100%;
+          width: 80%;
           margin: 20px;
-          font-size: 26px;
-          font-weight: bold;
+          padding-left: 50px;
+          display: flex;
+          justify-content: space-between;
+          &__price{
+            font-size: 26px;
+            font-weight: bold;
+          }
+          &__cart{
+
+          }
         }
         &__SubInfo{
           width: 100%;

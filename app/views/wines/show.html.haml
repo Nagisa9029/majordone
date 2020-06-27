@@ -47,9 +47,12 @@
           .WineInfo__top--title
             = @wine.title
         .WineInfo__Price
-          = "#{number_with_delimiter(@wine.price)}円"
-          = link_to wine_cart_items_path(@wine.id), method: :post do
-            %button.btn{style: "display: inline-block; height: 50px; width: 150px; background-color: #440000; color: gold;"} カートに入れる
+          .WineInfo__Price__price
+            = "#{number_with_delimiter(@wine.price)}円"
+          .WineInfo__Price__cart
+            = link_to wine_cart_items_path(@wine.id), method: :post do
+              %button.btn{style: "display: inline-block; height: 50px; width: 150px; background-color: #440000; color: gold;"} カートに入れる
+        %hr
 
         .WineInfo__SubInfo
           = @wine.comment
@@ -78,7 +81,7 @@
                   = "#{@wine.domaine.name} / #{@wine.chator}"
               %tr
                 %th 原産地呼称
-                %td A.O.C
+                %td 
               %tr
                 %th タイプ
                 %td
