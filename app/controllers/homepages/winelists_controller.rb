@@ -1,4 +1,5 @@
 class Homepages::WinelistsController < ApplicationController
+  before_action :authenticate_user!
   def index
 
     if SparklingParame.where(user_id: current_user.id).blank?

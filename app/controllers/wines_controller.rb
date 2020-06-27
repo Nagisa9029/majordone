@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_group
 
   def index
@@ -94,9 +95,86 @@ class WinesController < ApplicationController
   end
 
   def edit
+    @wine = Wine.find(params[:id])
   end
 
   def update
+    @wine = Wine.find(params[:id])
+
+    g = Gruff::Area.new 500
+    g.title = "My Graph"
+    g.theme_greyscale
+    g.maximum_value = 10
+    g.minimum_value = 0
+    
+    taste = []
+    if @wine.attack != nil
+      taste << @wine.attack
+      key = taste.length - 1
+      g.labels[key] = 'attack'
+    end
+    if @wine.body != nil
+      taste << @wine.body
+      key = taste.length - 1
+      g.labels[key] = 'body'
+    end
+    if @wine.color != nil
+      taste << @wine.color
+      key = taste.length - 1
+      g.labels[key] = 'color'
+    end
+    if @wine.flavor != nil
+      taste << @wine.flavor
+      key = taste.length - 1
+      g.labels[key] = 'flavor'
+    end
+    if @wine.fruit_flavor != nil
+      taste << @wine.fruit_flavor
+      key = taste.length - 1
+      g.labels[key] = 'fruit_flavor'
+    end
+    if @wine.sweetness != nil
+      taste << @wine.sweetness
+      key = taste.length - 1
+      g.labels[key] = 'sweetness'
+    end
+    if @wine.bitterness != nil
+      taste << @wine.bitterness
+      key = taste.length - 1
+      g.labels[key] = 'bitterness'
+    end
+    if @wine.acidity != nil
+      taste << @wine.acidity
+      key = taste.length - 1
+      g.labels[key] = 'acidity'
+    end
+    if @wine.taste != nil
+      taste << @wine.taste
+      key = taste.length - 1
+      g.labels[key] = 'taste'
+    end
+    if @wine.tannin != nil
+      taste << @wine.tannin
+      key = taste.length - 1
+      g.labels[key] = 'tannin'
+    end
+    if @wine.astringency != nil
+      taste << @wine.astringency
+      key = taste.length - 1
+      g.labels[key] = 'astringency'
+    end
+
+    g.data('data', taste)
+    g.write("./app/assets/images/graph.png")
+
+    image = File.open('./app/assets/images/graph.png')
+    @wine.score_image = image
+
+    if @wine.update(wine_params)
+      redirect_to edit_wine_path(@wine.id)
+    else
+      render :index
+    end
   end
 
   def destroy
@@ -127,6 +205,8 @@ class WinesController < ApplicationController
                                   :score_image,
                                   :score,
                                   :taste_comment,
+                                  :aoc,
+                                  :cuisine,
                                   sepage_ids: [],
                                   productimages_attributes:[
                                       :id,

@@ -49,6 +49,16 @@
               = f.label :price, "価格", class: 'CreateForm__label'
             %td
               = f.text_field :price, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :aoc, "AOC", class: 'CreateForm__label'
+            %td
+              = f.text_field :aoc, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :cuisine, "お勧め料理", class: 'CreateForm__label'
+            %td
+              = f.text_field :cuisine, class: 'CreateForm__input', placeholder: ''
       .CreateForm__field
         = f.fields_for :productimages do |op|
           = render 'productimage_fields', f: op

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update] do
   end
 
+  get '/about' => 'roots#about', as: 'about_root'
   get '/butler' => 'roots#butler', as: 'butler_root'
   get '/homepage' => 'roots#homepage', as: 'homepage_root'
   namespace :homepages do
