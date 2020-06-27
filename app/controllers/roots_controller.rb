@@ -37,7 +37,8 @@ class RootsController < ApplicationController
     @blancParame.sweetness = blanc_parame[:sweetness]
     @blancParame.acidity = blanc_parame[:acidity]
     @blancParame.taste = blanc_parame[:taste]
-    @blancParame.score_image = File.open('./app/assets/images/user_blanc_graph.png')
+    # @blancParame.score_image = File.open('./app/assets/images/user_blanc_graph.png')
+    @blancParame.score_image = File.open('./public/assets/user_blanc_graph.png')
     @blancParame.save
 
     rouge_parame = RougeParame.input(str)
@@ -51,7 +52,8 @@ class RootsController < ApplicationController
     @rougeParame.acidity = rouge_parame[:acidity]
     @rougeParame.tannin = rouge_parame[:tannin]
     @rougeParame.astringency = rouge_parame[:astringency]
-    @rougeParame.score_image = File.open('./app/assets/images/user_rouge_graph.png')
+    # @rougeParame.score_image = File.open('./app/assets/images/user_rouge_graph.png')
+    @rougeParame.score_image = File.open('./public/assets/user_rouge_graph.png')
     @rougeParame.save
 
     sparkling_parame = SparklingParame.input(str)
@@ -65,7 +67,8 @@ class RootsController < ApplicationController
     @sparklingParame.bitterness = sparkling_parame[:bitterness]
     @sparklingParame.acidity = sparkling_parame[:acidity]
     @sparklingParame.taste = sparkling_parame[:taste]
-    @sparklingParame.score_image = File.open('./app/assets/images/user_sparkling_graph.png')
+    # @sparklingParame.score_image = File.open('./app/assets/images/user_sparkling_graph.png')
+    @sparklingParame.score_image = File.open('./public/assets/user_sparkling_graph.png')
     @sparklingParame.save
 
     redirect_to butler_root_path

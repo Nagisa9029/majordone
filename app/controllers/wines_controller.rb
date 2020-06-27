@@ -83,9 +83,11 @@ class WinesController < ApplicationController
     end
 
     g.data('data', taste)
-    g.write("./app/assets/images/graph.png")
+    # g.write("./app/assets/images/graph.png")
+    g.write("./public/assets/graph.png")
 
-    image = File.open('./app/assets/images/graph.png')
+    # image = File.open('./app/assets/images/graph.png')
+    image = File.open('./public/assets/graph.png')
     @wine.score_image = image
     if @wine.save
       redirect_to new_wine_path
@@ -165,9 +167,11 @@ class WinesController < ApplicationController
     end
 
     g.data('data', taste)
-    g.write("./app/assets/images/graph.png")
+    # g.write("./app/assets/images/graph.png")
+    g.write("./public/assets/graph.png")
 
-    image = File.open('./app/assets/images/graph.png')
+    # image = File.open('./app/assets/images/graph.png')
+    image = File.open('./public/assets/graph.png')
     @wine.score_image = image
 
     if @wine.update(wine_params)
