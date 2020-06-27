@@ -268,7 +268,7 @@ class SparklingParame < ApplicationRecord
 
     g.data :deta, taste_params.values
     # g.write("./app/assets/images/user_sparkling_graph.png")
-    g.write("./public/assets/user_sparkling_graph.png")
+    g.write("./public/assets/images/user_sparkling_graph.png")
 
     taste_params[:user_id] = deta[0].to_i
     return taste_params
