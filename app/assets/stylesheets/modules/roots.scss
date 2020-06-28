@@ -21,12 +21,15 @@
         background-size: 100% auto;
         height: 400px;
         &--title{
+          padding-top: 180px;
+          text-align: center;
           font-size: 30px;
           color: #fff;
         }
       }
       &--Sub{
         height: calc(100vh - 600px);
+        text-align: center;
       }
     }
   }
