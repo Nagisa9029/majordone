@@ -39,7 +39,6 @@ $(function() {
         let html_finite = buildHTML_finite(answer_param);
         $('.Chat__MainField').append(html_finite);
         $('.Chat__MainField').animate({ scrollTop: $('.Chat__MainField')[0].scrollHeight});
-        console.log(answer_param);
         return
       }
       quiz();

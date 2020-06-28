@@ -167,15 +167,15 @@ class WinesController < ApplicationController
     end
 
     g.data('data', taste)
-    # g.write("./app/assets/images/graph.png")
+    g.write("./app/assets/images/graph.png")
     # g.write("./public/assets/images/graph.png")
 
-    # image = File.open('./app/assets/images/graph.png')
+    image = File.open('./app/assets/images/graph.png')
     # image = File.open('./public/assets/images/graph.png')
-    # @wine.score_image = image
+    @wine.score_image = image
 
     if @wine.update(wine_params)
-      redirect_to edit_wine_path(@wine.id)
+      redirect_to edit_wine_path(@wine.id + 1)
     else
       render :index
     end
