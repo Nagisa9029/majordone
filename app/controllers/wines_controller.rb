@@ -167,12 +167,11 @@ class WinesController < ApplicationController
     end
 
     g.data('data', taste)
-    # g.write("./app/assets/images/graph.png")
-    g.write("./public/assets/images/graph.png")
-    # g.write(".public/assets/images/graph.png")
+    g.write("./app/assets/images/graph.png")
+    # g.write("./public/assets/images/graph.png")
 
-    # image = File.open('./app/assets/images/graph.png')
-    image = File.open('./public/assets/images/graph.png')
+    image = File.open('./app/assets/images/graph.png')
+    # image = File.open('./public/assets/images/graph.png')
     @wine.score_image = image
 
     if @wine.update(wine_params)

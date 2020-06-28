@@ -259,26 +259,26 @@ class RougeParame < ApplicationRecord
       end
     end
 
-    g = Gruff::Area.new 500
-    g.title = "My Graph"
-    g.theme_greyscale
-    g.maximum_value = 10
-    g.minimum_value = 0
+    # g = Gruff::Area.new 500
+    # g.title = "My Graph"
+    # g.theme_greyscale
+    # g.maximum_value = 10
+    # g.minimum_value = 0
     
-    g.labels = {0 => 'attack',
-                1 => 'body',
-                2 => 'color',
-                3 => 'flavor',
-                4 => 'fruit_flavor',
-                5 => 'bitterness',
-                6 => 'acidity',
-                7 => 'tannin',
-                8 => 'astringency'
-              }
+    # g.labels = {0 => 'attack',
+    #             1 => 'body',
+    #             2 => 'color',
+    #             3 => 'flavor',
+    #             4 => 'fruit_flavor',
+    #             5 => 'bitterness',
+    #             6 => 'acidity',
+    #             7 => 'tannin',
+    #             8 => 'astringency'
+    #           }
 
-    g.data :deta, taste_params.values
+    # g.data :deta, taste_params.values
     # g.write("./app/assets/images/user_rouge_graph.png")
-    g.write("./public/assets/images/user_rouge_graph.png")
+    # # g.write("./public/assets/images/user_rouge_graph.png")
 
     taste_params[:user_id] = deta[0].to_i
     return taste_params
