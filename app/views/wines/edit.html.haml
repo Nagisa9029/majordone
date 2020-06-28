@@ -59,11 +59,11 @@
               = f.label :cuisine, "お勧め料理", class: 'CreateForm__label'
             %td
               = f.text_field :cuisine, class: 'CreateForm__input', placeholder: ''
-      -# .CreateForm__field
-      -#   = f.fields_for :productimages do |op|
-      -#     = render 'productimage_fields', f: op
-      -#     .links
-      -#       = link_to_add_association '＋別の商品を追加', f, :productimages
+      .CreateForm__field
+        = f.fields_for :productimages do |op|
+          = render 'productimage_fields', f: op
+          .links
+            = link_to_add_association '＋別の商品を追加', f, :productimages
         -# = f.fields_for :productimages do |image_form|
         -#   .CreateForm__leftField
         -#     = image_form.label :image, "画像", class: 'CreateForm__label'
