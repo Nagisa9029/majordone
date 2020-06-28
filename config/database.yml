@@ -48,12 +48,20 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 
+# production:
+#   <<: *default
+#   database: majordone_production
+#   username: root
+#   password: <%= ENV['DATABASE_PASSWORD'] %>
+#   socket: /var/lib/mysql/mysql.sock
+
+## Heroku
 production:
+#半角スペース２個分の空白を開ける
   <<: *default
-  database: majordone_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
 
 ## AWS
 # production:
