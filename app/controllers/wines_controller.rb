@@ -168,7 +168,8 @@ class WinesController < ApplicationController
 
     g.data('data', taste)
     # g.write("./app/assets/images/graph.png")
-    g.write(".public/assets/images/graph.png")
+    g.write("./public/assets/images/graph.png")
+    # g.write(".public/assets/images/graph.png")
 
     # image = File.open('./app/assets/images/graph.png')
     image = File.open('./public/assets/images/graph.png')
