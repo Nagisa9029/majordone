@@ -249,26 +249,26 @@ class SparklingParame < ApplicationRecord
       end
     end
 
-    # g = Gruff::Area.new 500
-    # g.title = "My Graph"
-    # g.theme_greyscale
-    # g.maximum_value = 10
-    # g.minimum_value = 0
+    g = Gruff::Area.new 500
+    g.title = "My Graph"
+    g.theme_greyscale
+    g.maximum_value = 10
+    g.minimum_value = 0
     
-    # g.labels = {0 => 'attack',
-    #             1 => 'body',
-    #             2 => 'color',
-    #             3 => 'flavor',
-    #             4 => 'fruit_flavor',
-    #             5 => 'sweetness',
-    #             6 => 'bitterness',
-    #             7 => 'acidity',
-    #             8 => 'taste'
-    #           }
+    g.labels = {0 => 'attack',
+                1 => 'body',
+                2 => 'color',
+                3 => 'flavor',
+                4 => 'fruit_flavor',
+                5 => 'sweetness',
+                6 => 'bitterness',
+                7 => 'acidity',
+                8 => 'taste'
+              }
 
-    # g.data :deta, taste_params.values
-    # g.write("./app/assets/images/user_sparkling_graph.png")
-    # # g.write("./public/assets/images/user_sparkling_graph.png")
+    g.data :deta, taste_params.values
+    g.write("./app/assets/images/user_sparkling_graph.png")
+    # g.write("./public/assets/images/user_sparkling_graph.png")
 
     taste_params[:user_id] = deta[0].to_i
     return taste_params
