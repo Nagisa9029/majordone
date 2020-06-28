@@ -4,7 +4,8 @@
     .SearchField__online
       online shop
     .SearchField__left
-      %h1  Search Field
+      = icon('fas', 'search', class: "IconBox--icon")
+      Search Field
     .SearchField__right
       %ul.IconBox
         = link_to "#", class: "IconBox__Btn" do
@@ -34,5 +35,5 @@
             = icon('fas', 'cart-arrow-down', class: "IconBox--icon")
             カート
   %hr
-
+ 
 .PaddingBox2

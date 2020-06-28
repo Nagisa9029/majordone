@@ -81,7 +81,8 @@
                   = "#{@wine.domaine.name} / #{@wine.chator}"
               %tr
                 %th 原産地呼称
-                %td 
+                %td
+                  = @wine.aoc
               %tr
                 %th タイプ
                 %td
@@ -94,5 +95,6 @@
                     %br
               %tr
                 %th おすすめ料理
-                %td 
+                %td
+                  = @wine.cuisine
 

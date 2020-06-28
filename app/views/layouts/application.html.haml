@@ -25,7 +25,7 @@
               %span
         - else
           .menu
-            = link_to about_root_path do
+            = link_to about_root_path, class: "about--btn"  do
               MaJordomeについて
     - if user_signed_in?
       %nav#slide-menu
@@ -36,19 +36,30 @@
             UserName :
             %h4
               = current_user.nickname
-        %ul
-          = link_to homepage_root_path, class: 'no-underline' do
-            %li My Menu(/user#edit)
-          = link_to homepages_winelists_path, class: 'no-underline' do
-            %li Wine List(wines#MyList)
-          = link_to homepages_recipelists_path, class: 'no-underline' do
-            %li My Recipe(recipes#Mylist)
-          = link_to butler_root_path, class: 'no-underline' do
-            %li Butler(ワイン診断)
-          = link_to edit_user_path(current_user.id), class: 'no-underline' do
-            %li ユーザー編集
-          = link_to destroy_user_session_path, method: :delete, class: 'no-underline' do
-            %li ログアウト
+        .MENU_LIST
+          .MENU_LIST--top
+            MAIN MENU
+          %ul
+            = link_to butler_root_path, class: 'no-underline' do
+              %li Butler
+            = link_to wines_path, class: 'no-underline' do
+              %li online Shop
+            = link_to recipes_path, class: 'no-underline' do
+              %li Recipes
+        .MENU_LIST
+          .MENU_LIST--top
+            USER MENU
+          %ul
+            = link_to homepage_root_path, class: 'no-underline' do
+              %li My Menu
+            = link_to homepages_winelists_path, class: 'no-underline' do
+              %li My Wine List
+            = link_to homepages_recipelists_path, class: 'no-underline' do
+              %li My Recipe
+            = link_to edit_user_path(current_user.id), class: 'no-underline' do
+              %li user_edit
+            = link_to destroy_user_session_path, method: :delete, class: 'no-underline' do
+              %li logout
 
 
           

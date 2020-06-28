@@ -3,8 +3,13 @@
   .Butler_Info
     .Butler_Info--neko
       = image_tag ('neko_turushi.png'), class: 'nekoTurushuImg'
-    .Butler_Info--comment
-      = "#{current_user.nickname}様にオススメのワインをリストアップいたしました。"
+    - if @sparklingWines.blank?
+      .Butler_Info--comment 
+        = link_to butler_root_path, class: 'no-underline' do
+          = "#{current_user.nickname}様のお好みをまだ把握できておらず、、少しお話ししませんか？"
+    - else 
+      .Butler_Info--comment
+        = "#{current_user.nickname}様にオススメのワインをリストアップいたしました。"
   .MenuTabField
     .MenuTab
       %ul.Winelist

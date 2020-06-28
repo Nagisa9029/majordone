@@ -34,6 +34,8 @@
     &__left{
       position: absolute;
       color: rgb(116, 113, 113);
+      font-size: 34px;
+      padding: 10px 0 0 30px;
     }
     &__right{
       width: 300px;
@@ -86,9 +88,17 @@
   // height: 1000px;
   display: flex;
   .WineSide{
-    background-color: lime;
+    background-color: rgba(66, 66, 66, 0.4);
     width: 300px;
-    height: 100%;
+    height: 1800px;
+    padding: 30px;
+    &--search{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &--element{
+      padding: 20px;
+    }
   }
   .WineMainField{
     padding: 30px;
@@ -152,6 +162,7 @@
           li{
             border: 1px solid;
             border-color: rgb(207, 207, 207);
+            background-color: rgba(238, 235, 235, 0.4);
             margin: 5px;
           }
         }
@@ -161,6 +172,7 @@
           float: right;
           border: 1px solid;
           border-color: rgb(207, 207, 207);
+          background-color: rgba(238, 235, 235, 0.4);
           .Main--image{
             height: 300px;
             margin: 0 auto;
@@ -274,7 +286,7 @@
           height: 100px;
           width: 100%;
           .Product__table{
-            background: #f9f9f9;
+            background: rgba(167, 165, 165, 0.7);
             width: 100%;
             margin-top: 20px;
             border-collapse: separate;

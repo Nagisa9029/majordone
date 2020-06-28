@@ -3,7 +3,7 @@ class WinesController < ApplicationController
   before_action :set_group
 
   def index
-    @wines = Wine.page(params[:page]).per(20)
+    @wines = Wine.page(params[:page]).per(7)
   end
 
   def show

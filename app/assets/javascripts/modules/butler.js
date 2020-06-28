@@ -1,9 +1,13 @@
 $(function() {
-  qa = new Array();
-  count = 0; 
-  answer_param = [];
+  // qa = new Array();
+  // count = 0; 
+  // answer_param = [];
 
   function choiceQA(){
+    $(".Chat__MainField").empty();
+    qa = new Array();
+    count = 0; 
+    answer_param = [];
     answer_param[0] = tabs[0].name;
     const index = tabs.index(this);
     if (index == 1) {
@@ -17,6 +21,8 @@ $(function() {
       qa[7] = ["味付けといえば？","しょうゆ","ソース","塩","薄味がいちばん","なんでも辛くする"];
       qa[8] = ["辛いものは好きですか？","苦手です","普通がいちばん","まぁ、大丈夫","結構、いける口です","無類の激辛好き"];
       qa[9] = ["コーヒーはどうやって飲む？","コーヒーは飲まない","砂糖","ミルク","砂糖・ミルク","ブラック"];
+    } else {
+      qa[0] = ["申し訳ありません。このプログラムは、勉強不足のため承れません。"];
     }
 
     quiz();

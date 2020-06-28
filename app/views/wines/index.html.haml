@@ -2,14 +2,50 @@
 
 .WineBody
   .WineSide
-    a
-    %br
-    a
-    %br
-    a
-    %br
-    a
-    %br
+    .WineSide--search
+      タイプ
+    .WineSide--element
+      スパークリング
+      %br
+      白ワイン
+      %br
+      赤ワイン
+    %hr
+    .WineSide--search
+      味わい
+    .WineSide--element
+      
+    %hr
+    .WineSide--search
+      産地
+    .WineSide--element
+      フランス
+      %br
+      イタリア
+      %br
+      スペイン
+      %br
+      ポルトガル
+      %br
+      ドイツ
+      %br
+      アメリカ
+      %br
+      日本
+      %br
+      その他
+    %hr
+    .WineSide--search
+      品種
+    .WineSide--element
+      
+    %hr
+    .WineSide--search
+      価格
+    .WineSide--element
+      
+    %hr
+
   .WineMainField
     .Products
       - @wines.each do |wine|
