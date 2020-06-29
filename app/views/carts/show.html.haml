@@ -34,7 +34,7 @@
                   %option 4
                   %option 5
                 
-                = link_to cart_cart_items_path(id: item.id, wine_id: item.wine_id, cart_id: @cart.id), method: :delete do
+                = link_to cart_cart_item_path(id: item.id, wine_id: item.wine_id, cart_id: @cart.id), method: :delete do
                   .btn{style: "margin-top: 20px; display: inline-block; height: 30px; width: 70px; background-color: rgb(136, 57, 57); color: #fff;"} 削除
 
 

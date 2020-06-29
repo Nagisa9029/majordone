@@ -1,0 +1,33 @@
+.PaddingBox
+.Content
+  %h1 新規Sepageフォーム
+  .CreateForm
+    = form_with model: @sepage , local: true do |f|
+      %table.CreateForm__Info
+        %tbody
+          %tr
+            %th
+              = f.label :kind, "タイプ", class: 'CreateForm__label'
+            %td
+              = f.text_field :kind, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :name, "品種", class: 'CreateForm__label'
+            %td
+              = f.text_field :name, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :name_spell, "品種（スペル）", class: 'CreateForm__label'
+            %td
+              = f.text_field :name_spell, class: 'CreateForm__input', placeholder: ''
+          %tr
+            %th
+              = f.label :text, "詳細", class: 'CreateForm__label'
+            %td
+              = f.text_area :text, class: 'CreateForm__input', placeholder: ''
+
+      .CreateForm__field
+        .CreateForm__leftField
+        .CreateForm__rightField
+          = f.submit '登録', class: 'Form__submitBtn'
+

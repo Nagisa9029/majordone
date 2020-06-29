@@ -10,12 +10,10 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @sepage = Sepage.new
+
   end
 
   def create
-    @sepage = Sepage.new(sepage_params)
-    @sepage.save
     
   end
 
@@ -33,7 +31,7 @@ class RecipesController < ApplicationController
 
   private
   def sepage_params
-    params.require(:sepage).permit( :kind, :name, :name_spell, :text)
+    params.require(:recipe).permit( :name)
   end
 
 end

@@ -16,14 +16,16 @@ Rails.application.routes.draw do
   end
 
   resources :wines do
-    resource :cart_items, only: [:create]
+    resources :cart_items, only: [:create]
   end
   
   resources :carts, only: [:create, :show] do
-    resource :cart_items, only: [:destroy]
+    resources :cart_items, only: [:destroy]
   end
 
   resources :recipes
+  resources :domaines, only: [:new, :create]
+  resources :sepages, only: [:new, :create]
   resources :roots, only: [:create] do
   end
 end

@@ -43,7 +43,7 @@
             = link_to wine_path(wine.id), class: 'no-underline' do
               = image_tag wine.productimages[0].image_url, class: 'WineContent__Box--Image'
             .WineContent__Box--domeine
-              = image_tag @wine.domaine.flag_url, class: 'frag_image'
+              = image_tag wine.domaine.flag_url, class: 'frag_image'
               = "#{wine.domaine.name} / #{wine.chator}"
             .WineContent__Box--name
               = link_to wine_path(wine.id), class: 'no-underline' do
