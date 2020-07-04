@@ -7,7 +7,12 @@ class DomainesController < ApplicationController
 
   def create
     @domaine = Domaine.new(domaine_params)
-    @domaine.save
+    if @domaine.save
+      redirect_to new_domaine_path
+    else
+      render :new
+    end
+  end
 
   private
   def domaine_params
