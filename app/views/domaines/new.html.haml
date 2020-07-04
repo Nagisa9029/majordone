@@ -7,20 +7,24 @@
         %tbody
           %tr
             %th
-              = f.label :name, "品種", class: 'CreateForm__label'
+              = f.label :name, "国名", class: 'CreateForm__label'
             %td
               = f.text_field :name, class: 'CreateForm__input', placeholder: ''
-
-      .CreateForm__field
-        = f.fields_for :productimages do |op|
-          = render 'wines/productimage_fields', f: op
-          .links
-            = link_to_add_association '＋別の商品を追加', f, :productimages
+          %tr
+            %th
+              = f.label :flag, "画像", class: 'CreateForm__label'
+            %td
+              = f.file_field :flag, class: 'CreateForm__input'
+      -# .CreateForm__field
+        -# = f.fields_for :productimages do |op|
+        -#   = render 'wines/productimage_fields', f: op
+        -#   .links
+        -#     = link_to_add_association '＋別の商品を追加', f, :productimages
         -# = f.fields_for :productimages do |image_form|
-        -#   .CreateForm__leftField
-        -#     = image_form.label :image, "画像", class: 'CreateForm__label'
-        -#   .CreateForm__rightField
-        -#     = image_form.file_field :image, class: 'CreateForm__input'
+          -# .CreateForm__leftField
+          -#   = f.label :flg, "画像", class: 'CreateForm__label'
+          -# .CreateForm__rightField
+          -#   = f.file_field :flg, class: 'CreateForm__input'
 
 
       .CreateForm__field
