@@ -1,0 +1,18 @@
+.PaddingBox
+.Content
+  %h1 新規Typeフォーム
+  .CreateForm
+    = form_with model: @wine_type , local: true do |f|
+      %table.CreateForm__Info
+        %tbody
+          %tr
+            %th
+              = f.label :group, "タイプ", class: 'CreateForm__label'
+            %td
+              = f.text_field :group, class: 'CreateForm__input', placeholder: ''
+
+      .CreateForm__field
+        .CreateForm__leftField
+        .CreateForm__rightField
+          = f.submit '登録', class: 'Form__submitBtn'
+

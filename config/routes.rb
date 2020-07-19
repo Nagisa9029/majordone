@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :carts, only: [:create, :show] do
     resources :cart_items, only: [:destroy]
   end
-
+  resources :wine_types
   resources :recipes
   resources :domaines, only: [:new, :create]
   resources :sepages, only: [:new, :create]
