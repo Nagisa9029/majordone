@@ -9,11 +9,13 @@ class CartsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    binding.pry
+    # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = 'sk_test_05a7ac4d534091ea7be7cbef'
     charge = Payjp::Charge.create(
-    amount: 300,
-    card: params['payjp-token'],
-    currency: 'jpy'
+      amount: 300,
+      card: params['payjp-token'],
+      currency: 'jpy'
     )
   end
 end

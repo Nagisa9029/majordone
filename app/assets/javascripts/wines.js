@@ -1,7 +1,6 @@
 $(function(){
   $('.List--image').click(function(e){
     $('.Main--image').fadeOut(500, function(){
-      console.log(e.target);
       $('.Main--image').attr('src', e.target.src).fadeIn(500);
     });
   });

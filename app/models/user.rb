@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true, uniqueness: true
 
+  has_many :cards
   has_one :rougeParame
   has_one :blancParame
   has_one :sparklingParame
