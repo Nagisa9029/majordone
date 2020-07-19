@@ -105,32 +105,32 @@
               = f.label :fruit_flavor, "果実味", class: 'CreateForm__label'
             %td
               = f.number_field :fruit_flavor, class: 'CreateForm__input', placeholder: ''
-            -# %th
-            -#   = f.label :sweetness, "甘味", class: 'CreateForm__label'
-            -# %td
-            -#   = f.number_field :sweetness, class: 'CreateForm__input', placeholder: ''
-          %tr
             %th
-              = f.label :bitterness, "苦味", class: 'CreateForm__label'
+              = f.label :sweetness, "甘味", class: 'CreateForm__label'
             %td
-              = f.number_field :bitterness, class: 'CreateForm__input', placeholder: ''
+              = f.number_field :sweetness, class: 'CreateForm__input', placeholder: ''
+          %tr
+            -# %th
+            -#   = f.label :bitterness, "苦味", class: 'CreateForm__label'
+            -# %td
+            -#   = f.number_field :bitterness, class: 'CreateForm__input', placeholder: ''
             %th
               = f.label :acidity, "酸味", class: 'CreateForm__label'
             %td
               = f.number_field :acidity, class: 'CreateForm__input', placeholder: ''
-            -# %th
-            -#   = f.label :taste, "コク", class: 'CreateForm__label'
-            -# %td
-            -#   = f.number_field :taste, class: 'CreateForm__input', placeholder: ''
+            %th
+              = f.label :taste, "コク", class: 'CreateForm__label'
+            %td
+              = f.number_field :taste, class: 'CreateForm__input', placeholder: ''
           %tr
-            %th
-              = f.label :tannin, "タンニン", class: 'CreateForm__label'
-            %td
-              = f.number_field :tannin, class: 'CreateForm__input', placeholder: ''
-            %th
-              = f.label :astringency, "渋み", class: 'CreateForm__label'
-            %td
-              = f.number_field :astringency, class: 'CreateForm__input', placeholder: ''
+            -# %th
+            -#   = f.label :tannin, "タンニン", class: 'CreateForm__label'
+            -# %td
+            -#   = f.number_field :tannin, class: 'CreateForm__input', placeholder: ''
+            -# %th
+            -#   = f.label :astringency, "渋み", class: 'CreateForm__label'
+            -# %td
+            -#   = f.number_field :astringency, class: 'CreateForm__input', placeholder: ''
       .CreateForm__field
         .CreateForm__leftField
         .CreateForm__rightField
