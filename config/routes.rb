@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   resources :carts, only: [:create, :show] do
     resources :cart_items, only: [:destroy]
   end
+  post '/carts/:id' => 'carts#pay'
 
+  resources :cards
   resources :recipes
   resources :domaines, only: [:new, :create]
   resources :sepages, only: [:new, :create]
