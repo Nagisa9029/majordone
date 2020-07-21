@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
   resources :wine_types
   resources :recipes
-  resources :domaines, only: [:new, :create]
+  resources :domaines, only: [:new, :create, :edit, :update]
   resources :sepages, only: [:new, :create]
   resources :roots, only: [:create] do
   end

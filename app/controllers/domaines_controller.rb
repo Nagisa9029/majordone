@@ -14,6 +14,19 @@ class DomainesController < ApplicationController
     end
   end
 
+  def edit
+    @domaine = Domaine.find(params[:id])
+  end
+
+  def update
+    @domaine = Domaine.find(params[:id])
+    if @domaine.update(domaine_params)
+      redirect_to domaines_path(@domaine.id + 1)
+    else
+      render :edit
+    end
+  end
+
   private
   def domaine_params
     params.require(:domaine).permit( :name, :flag)
