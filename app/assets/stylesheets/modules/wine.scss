@@ -11,6 +11,9 @@
 .PaddingBox2{
   height: 50px;
 }
+.search-icon{
+  font-size: 25px;
+}
 .WineHeader{
   height: 68px;
   width: 100vw;
@@ -34,8 +37,18 @@
     &__left{
       position: absolute;
       color: rgb(116, 113, 113);
-      font-size: 34px;
-      padding: 10px 0 0 30px;
+      &--icon{
+        height: 40px;
+        width: 20px;
+        margin: 15px 10px;
+        border: none;
+      }
+      &--inpput{
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        font-size: 22px;
+      }
     }
     &__right{
       width: 300px;

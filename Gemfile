@@ -82,3 +82,5 @@ gem 'bootstrap'
 gem 'gon'
 gem 'payjp'
 gem 'fog-aws'
+gem 'ransack'
+gem "gretel"
