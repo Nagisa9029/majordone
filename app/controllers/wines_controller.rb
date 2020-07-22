@@ -1,9 +1,10 @@
 class WinesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_search
   before_action :set_group
 
   def index
-    @wines = Wine.page(params[:page]).per(7)
+    @wines = @search.result.page(params[:page]).per(7)
   end
 
   def show
@@ -84,10 +85,8 @@ class WinesController < ApplicationController
 
     g.data('data', taste)
     g.write("./app/assets/images/graph.png")
-    # g.write("./public/assets/graph.png")
 
     image = File.open('./app/assets/images/graph.png')
-    # image = File.open('./public/assets/graph.png')
     @wine.score_image = image
     if @wine.save
       redirect_to new_wine_path
@@ -168,10 +167,8 @@ class WinesController < ApplicationController
 
     g.data('data', taste)
     g.write("./app/assets/images/graph.png")
-    # g.write("./public/assets/images/graph.png")
 
     image = File.open('./app/assets/images/graph.png')
-    # image = File.open('./public/assets/images/graph.png')
     @wine.score_image = image
 
     if @wine.update(wine_params)
@@ -222,5 +219,9 @@ class WinesController < ApplicationController
 
   def set_group
     @cart = Cart.find(current_user.cart.id)
+  end
+
+  def set_search
+    @search = Wine.ransack(params[:q])
   end
 end

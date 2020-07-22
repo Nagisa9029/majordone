@@ -47,6 +47,17 @@
     %hr
 
   .WineMainField
+    .Sort_field
+      .Sort_field__box
+        Search Sort：
+        %button{type: "button", class: "btn-link"}
+          = sort_link(@search, :name, "商品名")
+        %button{type: "button", class: "btn-link"}
+          = sort_link(@search, :price, "価格")
+        %button{type: "button", class: "btn-link"}
+          = sort_link(@search, :domaine, "生産地")
+        %button{type: "button", class: "btn-link"}
+          = sort_link(@search, :wine_type, "タイプ")
     .Products
       - @wines.each do |wine|
         .Products__Box
