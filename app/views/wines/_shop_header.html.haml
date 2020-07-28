@@ -4,10 +4,10 @@
     .SearchField__online
       online shop
     .SearchField__left
-      = search_form_for @search, class: '' do |f|
-        = button_tag type: 'submit', class: "SearchField__left--icon" do
-          = icon('fas', 'search search-icon', class: "")
-        = f.search_field :name_cont, class: 'SearchField__left--inpput', placeholder: 'Search Field'
+      -# = search_form_for @search, class: '' do |f|
+      -#   %input_tag{type: 'submit', class: "SearchField__left--icon"}
+      -#     = icon('fas', 'search search-icon', class: "")
+      -#   = f.search_field :name_cont, class: 'SearchField__left--inpput', placeholder: 'Search Field'
         
     .SearchField__right
       %ul.IconBox

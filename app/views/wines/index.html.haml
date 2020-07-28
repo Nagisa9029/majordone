@@ -5,41 +5,24 @@
     .WineSide--search
       タイプ
     .WineSide--element
-      スパークリング
-      %br
-      白ワイン
-      %br
-      赤ワイン
-    %hr
-    .WineSide--search
-      味わい
-    .WineSide--element
-      
+      - WineType.all.each do |type|
+        = link_to type.group, wines_path({q: {"wine_type_id_eq": type.id, commit: "Search" }})
+        %br
     %hr
     .WineSide--search
       産地
     .WineSide--element
-      フランス
-      %br
-      イタリア
-      %br
-      スペイン
-      %br
-      ポルトガル
-      %br
-      ドイツ
-      %br
-      アメリカ
-      %br
-      日本
-      %br
-      その他
+      - Domaine.all.each do |domaine|
+        = link_to domaine.name, wines_path({q: {"domaine_id_eq": domaine.id, commit: "Search" }})
+        %br
     %hr
-    .WineSide--search
-      品種
-    .WineSide--element
-      
-    %hr
+    -# .WineSide--search
+    -#   品種
+    -# .WineSide--element
+    -#   - Sepage.all.each do |sepage|
+    -#     = link_to sepage.name, wines_path({q: {"wine.wine_sepages_id_eq": sepage.id, commit: "Search" }})
+    -#     %br
+    -# %hr
     .WineSide--search
       価格
     .WineSide--element
@@ -50,14 +33,14 @@
     .Sort_field
       .Sort_field__box
         Search Sort：
-        %button{type: "button", class: "btn-link"}
+        = link_to "", class: "" do
           = sort_link(@search, :name, "商品名")
-        %button{type: "button", class: "btn-link"}
+        = link_to "", class: "" do
           = sort_link(@search, :price, "価格")
-        %button{type: "button", class: "btn-link"}
-          = sort_link(@search, :domaine, "生産地")
-        %button{type: "button", class: "btn-link"}
-          = sort_link(@search, :wine_type, "タイプ")
+        = link_to "", class: "" do
+          = sort_link(@search, :domaine_id, "生産地")
+        = link_to "", class: "" do
+          = sort_link(@search, :wine_type_id, "タイプ")
     .Products
       - @wines.each do |wine|
         .Products__Box
